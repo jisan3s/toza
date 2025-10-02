@@ -1,0 +1,308 @@
+/* Max width 767px */
+/* Min width 576px to Max width 767px */
+/* Min width 768px to Max width 991px */
+/* Min width 992px to Max width 1199px */
+@media only screen and (min-width: 992px) and (max-width: 1199px) {
+  .ptb-140 {
+    padding-top: 100px;
+    padding-bottom: 100px;
+  }
+  .pt-140 {
+    padding-top: 100px;
+  }
+  .pb-140 {
+    padding-bottom: 100px;
+  }
+  /* Home One Responsive */
+  .navbar {
+    padding-top: 15px;
+    padding-bottom: 15px;
+  }
+  .navbar .container-fluid {
+    padding-left: calc(var(--bs-gutter-x) * 0.5);
+    padding-right: calc(var(--bs-gutter-x) * 0.5);
+    max-width: 960px;
+  }
+  .main-banner-area .container-fluid {
+    padding-left: calc(var(--bs-gutter-x) * 0.5);
+    padding-right: calc(var(--bs-gutter-x) * 0.5);
+    max-width: 960px;
+  }
+  .main-banner-content {
+    margin-right: 0;
+    padding: 100px 50px;
+  }
+  .main-banner-image {
+    margin-left: 0;
+  }
+  .benefit-card {
+    padding: 35px;
+  }
+  .about-area {
+    margin: 0 0;
+  }
+  .about-content {
+    padding-left: 0;
+  }
+  .about-fun-inner {
+    padding-top: 100px;
+    margin-top: 100px;
+  }
+  .services-large-image {
+    height: 650px;
+  }
+  .doctors-area {
+    margin: 0 0;
+  }
+  .work-image {
+    padding-right: 0;
+  }
+  .work-items {
+    padding-left: 0;
+  }
+  .work-items .item {
+    margin-bottom: 145px;
+  }
+  .work-items .item:nth-child(1) {
+    margin-left: 0;
+  }
+  .work-items .item:nth-child(2) {
+    margin-left: 0;
+  }
+  .work-items .item .vector {
+    bottom: -113px;
+  }
+  .feedback-area {
+    margin: 0 0;
+  }
+  .feedback-items {
+    margin-top: calc(-1 * var(--bs-gutter-y));
+    margin-right: calc(-0.5 * var(--bs-gutter-x));
+    margin-left: calc(-0.5 * var(--bs-gutter-x));
+  }
+  .feedback-items.g-0, .feedback-items .gy-0 {
+    --bs-gutter-y: 1rem;
+  }
+  .feedback-items.g-0, .feedback-items .gx-0 {
+    --bs-gutter-x: 1rem;
+  }
+  .feedback-card {
+    padding: 25px;
+  }
+  .feedback-card .info {
+    margin-bottom: 25px;
+  }
+  .feedback-card.wrap1 {
+    transform: unset;
+    margin-right: 0;
+  }
+  .feedback-card.wrap2 {
+    transform: unset;
+    margin-right: 0;
+  }
+  .feedback-card.wrap3 {
+    transform: unset;
+    margin: 0;
+  }
+  .feedback-card.wrap4 {
+    transform: unset;
+    margin-left: 0;
+  }
+  .pricing-card {
+    padding: 25px;
+  }
+  .faq-image {
+    margin-right: 0;
+  }
+  .app-area {
+    margin: 0 0;
+  }
+  .overview-area {
+    margin: 0 0;
+    padding-top: 100px;
+  }
+  .overview-content {
+    top: -50px;
+  }
+  .footer-top-content {
+    margin-bottom: 100px;
+  }
+  .footer-top-content .left {
+    display: block;
+  }
+  .footer-top-content .left .widget-logo {
+    margin-bottom: 15px;
+  }
+  .footer-top-content .left p {
+    max-width: 1050px;
+  }
+  .single-footer-widget .info-links li span a {
+    display: block;
+    margin-top: 5px;
+  }
+  /* Home Two Responsive */
+  .second-banner-area {
+    padding-top: 100px;
+  }
+  .second-banner-area .container-fluid {
+    padding-left: calc(var(--bs-gutter-x) * 0.5);
+    padding-right: calc(var(--bs-gutter-x) * 0.5);
+    max-width: 960px;
+  }
+  .urgent-help-area {
+    margin-top: 100px;
+  }
+  .urgent-help-info-card {
+    padding: 30px;
+  }
+  .second-about-content {
+    margin-bottom: 0;
+  }
+  .second-about-items {
+    max-width: 100%;
+  }
+  .second-about-btn {
+    margin-top: 30px;
+  }
+  .services-area .inner {
+    margin: 0 0;
+  }
+  .how-it-work-card {
+    padding: 25px;
+  }
+  .choose-us-area {
+    padding-top: 100px;
+    padding-bottom: 100px;
+  }
+  .choose-us-content {
+    margin: auto;
+  }
+  .features-inner .features-slider {
+    right: 30px;
+    bottom: 30px;
+  }
+  .features-right-card {
+    padding: 25px;
+  }
+  .faq-wrap-image {
+    text-align: center;
+    margin-right: 0;
+    margin-bottom: 0;
+  }
+  .app-area .inner {
+    margin: 0 0;
+  }
+  .copyright-area.wrap-style2 {
+    margin-top: 100px;
+  }
+  /* Home Three Responsive */
+  .third-banner-area {
+    padding-top: 170px;
+    padding-bottom: 170px;
+  }
+  .third-banner-area .container-fluid {
+    padding-left: calc(var(--bs-gutter-x) * 0.5);
+    padding-right: calc(var(--bs-gutter-x) * 0.5);
+    max-width: 960px;
+  }
+  .third-banner-image .fun-wrap {
+    right: -10px;
+  }
+  .how-it-works-area.wrap-style2 {
+    padding-top: 30px;
+  }
+  .third-choose-inner {
+    padding: 100px 50px;
+  }
+  .third-choose-content {
+    max-width: 1050px;
+  }
+  .third-choose-image {
+    height: 750px;
+  }
+  .feedback-wrap-inner .feedback-inner-card {
+    padding: 40px 0 0 0;
+  }
+  .feedback-wrap-inner .feedback-nav-buttons {
+    right: 0;
+    bottom: 0;
+  }
+  .app-area.wrap-style2 .inner {
+    padding: 100px 0;
+  }
+  .partner-inner {
+    padding: 100px 50px;
+  }
+  /* Inner Pages Responsive */
+  .page-banner-area {
+    margin: 0 0;
+  }
+  .page-banner-area .g-0, .page-banner-area .gy-0 {
+    --bs-gutter-y: 1.5rem;
+  }
+  .page-banner-area .g-0, .page-banner-area .gx-0 {
+    --bs-gutter-x: 1.5rem;
+  }
+  .page-banner-content .meta {
+    margin-right: 0;
+  }
+  .page-banner-image {
+    text-align: end;
+    margin-left: 0;
+    margin-bottom: 0;
+  }
+  .drive-card {
+    display: block;
+  }
+  .drive-card .content {
+    max-width: 1050px;
+    margin-top: 20px;
+  }
+  .contact-info-card {
+    display: block;
+    padding: 25px;
+  }
+  .contact-info-card .content {
+    margin-top: 20px;
+  }
+  .contact-us-image .wrap-content {
+    display: block;
+  }
+  .contact-us-image .wrap-content .left {
+    margin-bottom: 20px;
+  }
+  .service-overview-content {
+    padding-left: 0;
+  }
+  .service-covers-wrap {
+    margin-left: 0;
+  }
+  .choose-us-area.wrap-style2 {
+    margin: 0 0;
+  }
+  .subscribe-area {
+    margin: 0 0;
+  }
+  .doctor-profile-area {
+    margin: 0 0;
+    padding-top: 100px;
+  }
+  .doctor-profile-area::before {
+    height: 465px;
+  }
+  .doctor-profile-image .info-social {
+    padding: 20px;
+  }
+  .doctor-profile-desc {
+    margin-left: 0;
+    margin-top: 0;
+  }
+  .doctor-profile-desc .profile-tabs .availability-reviews {
+    padding: 45px;
+  }
+}
+/* Min width 1200px to Max width 1399px */
+/* Min width 1400px to Max width 1500px */
+/* Min width 1900px */
+
+/*# sourceMappingURL=responsive.css.map */

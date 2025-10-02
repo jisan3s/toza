@@ -1,0 +1,2342 @@
+// Required
+@import "../../node_modules/bootstrap/scss/functions";
+
+// Default variable overrides
+@import "./variables";
+
+@import "../../node_modules/bootstrap/scss/variables";
+@import "../../node_modules/bootstrap/scss/variables-dark";
+@import "../../node_modules/bootstrap/scss/mixins";
+
+// Create your own map
+$custom-colors: (
+    "paragraph": $bodyTextColor,
+    "primary": $primary,
+);
+
+// Merge the maps
+$theme-colors: map-merge($theme-colors, $custom-colors);
+
+// Required
+@import "../../node_modules/bootstrap/scss/maps";
+@import "../../node_modules/bootstrap/scss/root";
+
+// Optional Bootstrap components here
+@import "../../node_modules/bootstrap/scss/reboot";
+@import "../../node_modules/bootstrap/scss/type";
+
+// Required
+@import "../../node_modules/bootstrap/scss/bootstrap";
+
+/*
+@File: Toza. Template Styles
+
+* This file contains the styling for the actual template, this
+is the file you need to edit to change the look of the
+template.
+
+This files table contents are outlined below>>>>>
+
+*******************************************
+*******************************************
+
+** - Default CSS
+** - Default Btn Area CSS
+** - Section Title CSS
+
+*******************************************
+*******************************************
+*/
+
+/*================================================
+Fonts Family
+=================================================*/
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Instrument+Sans:ital,wght@0,400..700;1,400..700&display=swap');
+
+/*================================================
+Default CSS
+=================================================*/
+body {
+    margin: 0;
+    padding: 0;
+    font-family: $main-font-family;
+    font-size: $font-sixteen;
+    color: $bodyTextColor;
+}
+p {
+    margin-bottom: 15px;
+    line-height: 1.7;
+    color: $bodyTextColor;
+    font-size: $font-fifteen;
+
+    &:last-child {
+        margin-bottom: 0;
+    }
+}
+.h1, .h2, .h3, .h4, .h5, .h6, h1, h2, h3, h4, h5, h6 {
+    color: $blackColor;
+    font-weight: 500;
+    font-family: $heading-font-family;
+
+    a {
+        color: $blackColor;
+
+        &:hover {
+            color: $primary;
+        }
+    }
+}
+a {
+    text-decoration: none;
+    outline: 0 !important;
+    transition: $transition;
+}
+:focus {
+    outline: 0 !important;
+}
+.d-table {
+    width: 100%;
+    height: 100%;
+
+    &-cell {
+        vertical-align: middle;
+    }
+}
+img {
+    max-width: 100%;
+    height: auto;
+}
+.ptb-140 {
+    padding: {
+        top: 140px;
+        bottom: 140px;
+    };
+}
+.pt-140 {
+    padding-top: 140px;
+}
+.pb-140 {
+    padding-bottom: 140px;
+}
+.ptb-100 {
+    padding: {
+        top: 100px;
+        bottom: 100px;
+    };
+}
+.pt-100 {
+    padding-top: 100px;
+}
+.pb-100 {
+    padding-bottom: 100px;
+}
+
+.bg-F7F5F2 {
+    background-color: $whiteSmokeColor;
+}
+.bg-F2F2F3 {
+    background-color: $whiteSmokeColor2;
+}
+
+.music-border-tb {
+    border-top: 1px solid $borderColor;
+    border-bottom: 1px solid $borderColor;
+}
+.music-border-lr {
+    border-left: 1px solid $borderColor;
+    border-right: 1px solid $borderColor;
+}
+
+// Keyframes
+@keyframes waviy {
+    0%, 40%, 100% {
+        transform: translateY(0);
+    }
+    20% {
+        transform: translateY(-20px);
+    }
+}
+@keyframes rotateme {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+@keyframes moveBounce {
+    0% {
+        transform: translateY(0px);
+    }
+    50% {
+        transform: translateY(20px);
+    }
+    100% {
+        transform: translateY(0px);
+    }
+}
+
+/*================================================
+Default Btn Area CSS
+=================================================*/
+.music-default-btn {
+    display: inline-flex;
+    gap: 5px;
+    align-items: center;
+    justify-content: center;
+    padding: 18px 28px;
+    background: $musicGradientColor;
+    color: $whiteColor;
+    font-family: $heading-font-family;
+    font-size: $font-fifteen;
+    border-radius: 7px;
+    line-height: 1;
+    overflow: hidden;
+    position: relative;
+    z-index: 1;
+    transition: all 0.35s ease-in-out;
+
+    span {
+        transition: transform 0.35s ease;
+        position: relative;
+        z-index: 2;
+    }
+    i {
+        display: flex;
+        font-size: 13px;
+        position: relative;
+        right: -2px;
+        transition: transform 0.35s ease;
+        z-index: 2;
+    }
+    &::after {
+        position: absolute;
+        content: "";
+        inset: 0;
+        background: $musicGradientColor;
+        opacity: 0;
+        transform: scale(0.9);
+        transition: all 0.35s ease-in-out;
+        z-index: -1;
+    }
+    &:hover {
+        color: $whiteColor;
+        transform: scale(1.05);
+        
+        span {
+            transform: translateX(4px);
+        }
+        i {
+            transform: translateX(3px) rotate(5deg);
+        }
+        &::after {
+            opacity: 1;
+            transform: scale(1);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.25);
+        }
+    }
+    &.border-wrap {
+        background: linear-gradient($whiteSmokeColor, $whiteSmokeColor) padding-box, linear-gradient(60deg, #6B73FF, #000DFF) border-box;
+        border: 1px solid transparent;
+        color: $primary;
+        padding: 17px 28px;
+
+        &:hover {
+            color: $whiteColor;
+        }
+    }
+}
+
+/*================================================
+Music Section Title CSS
+=================================================*/
+.music-section-title {
+    text-align: center;
+    margin-bottom: 100px;
+
+    .sub {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        padding: 8px 20px;
+        background-color: $borderColor2;
+        border-radius: 50px;
+        margin-bottom: 20px;
+
+        span {
+            background: $musicGradientColor;
+            background-clip: text;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+    }
+    h2 {
+        margin-bottom: 0;
+        font-size: 40px;
+        max-width: 610px;
+        margin: auto;
+
+        span {
+            color: $primary;
+            font-style: italic;
+        }
+    }
+}
+
+/*================================================
+Preloader Area CSS
+=================================================*/
+.preloader-area {
+    z-index: 9999;
+    background-color: $whiteColor;
+
+    .loader {
+        transform: translateY(-50%);
+        top: 50%;
+    }
+    .waviy {
+        font-size: 50px;
+        margin-top: 10px;
+        -webkit-box-reflect: below -35px linear-gradient(transparent, rgba(0, 0, 0, 0.2));
+
+        span {
+            animation-delay: 0.1s;
+            animation: waviy 1s infinite;
+            font-weight: 700;
+            color: $blackColor;
+
+            &:nth-child(2) {
+                animation-delay: 0.2s;
+            }
+            &:nth-child(3) {
+                animation-delay: 0.3s;
+            }
+            &:nth-child(4) {
+                animation-delay: 0.4s;
+            }
+        }
+    }
+}
+
+/*================================================
+Top Bar Area CSS
+=================================================*/
+.top-bar-area {
+    .inner {
+        padding: {
+            top: 15px;
+            bottom: 15px;
+        };
+    }
+}
+.top-bar-content {
+    text-align: center;
+
+    span {
+        font-size: 13px;
+
+        a {
+            background: $musicGradientColor;
+            background-clip: text;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            transform: $transition;
+            position: relative;
+
+            &::before {
+                position: absolute;
+                content: "";
+                left: 0;
+                bottom: 0;
+                width: 0%;
+                height: 1px;
+                background: $musicGradientColor;
+                transition: $transition;
+            }
+            &:hover {
+                font-weight: 500;
+
+                &::before {
+                    width: 100%;
+                }
+            }
+        }
+    }
+}
+
+/*================================================
+Navbar Area CSS
+=================================================*/
+.navbar {
+    padding: 0;
+
+    &.sticky {
+        top: 0;
+        left: 0;
+        right: 0;
+        width: 100%;
+        z-index: 999;
+        position: sticky;
+        background-color: $whiteSmokeColor;
+        box-shadow: 0px 0px 60px 0px rgba(32, 38, 91, 0.10);
+        animation: 500ms ease-in-out 0s normal none 1 running fadeInDown;
+    }
+    .navbar-brand {
+        margin: 0 20px 0 0;
+        padding: 0;
+    }
+    .navbar-toggler {
+        color: $primary;
+        font-size: inherit;
+        box-shadow: unset;
+        border: none;
+        padding: 0;
+        .burger-menu {
+            cursor: pointer;
+            span {
+                height: 3px;
+                width: 30px;
+                margin: 5px 0;
+                display: block;
+                background: $primary;
+            }
+        }
+    }
+    ul {
+        margin-bottom: 0;
+        list-style-type: none;
+        padding: {
+            left: 0;
+            right: 0;
+        };
+    }
+    .navbar-nav {
+        margin: {
+            right: 0;
+            left: auto;
+        };
+        .nav-item {
+            position: relative;
+            margin: {
+                left: 17px;
+                right: 17px;
+            };
+            .nav-link {
+                position: relative;
+                color: $blackColor;
+                transition: $transition;
+                display: flex;
+                align-items: center;
+                font-size: $font-fifteen;
+                font-family: $heading-font-family;
+                padding: {
+                    left: 0;
+                    right: 0;
+                    top: 20px;
+                    bottom: 20px;
+                };
+                i {
+                    font-size: 17px;
+                    line-height: 1;
+                    position: relative;
+                    top: 2px;
+                    margin-left: 2px;
+                }
+                &:hover, &.active {
+                    color: $primary;
+                }
+            }
+            .dropdown-toggle {
+                padding-right: 0;
+
+                &::after {
+                    margin-left: 0;
+                    vertical-align: 0;
+                    border: none;
+                }
+            }
+            &:first-child {
+                margin-left: 0;
+            }
+            &:last-child {
+                margin-right: 0;
+            }
+            &:hover, &.active {
+                color: $primary;
+            }
+            .dropdown-menu {
+                left: 0;
+                top: 55px;
+                opacity: 0;
+                z-index: 99;
+                width: 250px;
+                margin-top: 0;
+                display: block;
+                border-radius: 10px;
+                position: absolute;
+                visibility: hidden;
+                background-color: $whiteColor;
+                border: none;
+                transition: all 0.2s ease-in-out;
+                transform: translate3d(0, 18px, 0);
+                box-shadow: 0px 4px 70px 0px rgba(0, 0, 0, 0.10);
+                padding: {
+                    top: 10px;
+                    bottom: 10px;
+                };
+                .nav-item {
+                    margin: 0;
+                    .nav-link {
+                        display: flex;
+                        gap: 7px;
+                        justify-content: space-between;
+                        align-items: center;
+                        color: $blackColor;
+                        padding: {
+                            top: 8px;
+                            bottom: 8px;
+                            left: 25px;
+                            right: 25px;
+                        };
+                        &::after {
+                            display: none;
+                        }
+                        &.active, &:hover {
+                            color: $primary;
+                        }
+                        &:hover {
+                            margin-left: 5px;
+                        }
+                    }
+                    .dropdown-menu {
+                        top: -5px;
+                        opacity: 0;
+                        right: -100%;
+                        left: auto;
+                        margin-top: 0;
+                        visibility: hidden;
+                        transform: translate3d(0, 18px, 0);
+                        
+                        .nav-item {
+                            .nav-link {
+                                color: $blackColor;
+
+                                &.active, &:hover {
+                                    color: $primary;
+                                }
+                                &:hover {
+                                    margin-left: 5px;
+                                }
+                            }
+                            .dropdown-menu {
+                                top: -5px;
+                                opacity: 0;
+                                right: -100%;
+                                left: auto;
+                                visibility: hidden;
+                                transform: translate3d(0, 18px, 0);
+    
+                                .nav-item {
+                                    .nav-link {
+                                        color: $blackColor;
+        
+                                        &.active, &:hover {
+                                            color: $primary;
+                                        }
+                                        &:hover {
+                                            margin-left: 5px;
+                                        }
+                                    }
+                                    .dropdown-menu {
+                                        top: -5px;
+                                        opacity: 0;
+                                        right: 100%;
+                                        left: auto;
+                                        visibility: hidden;
+                                        transform: translate3d(0, 18px, 0);
+            
+                                        .nav-item {
+                                            .nav-link {
+                                                color: $blackColor;
+                
+                                                &.active, &:hover {
+                                                    color: $primary;
+                                                }
+                                                &:hover {
+                                                    margin-left: 5px;
+                                                }
+                                            }
+                                            &.active {
+                                                .nav-link {
+                                                    color: $primary;
+                                                }
+                                            }
+                                            &:hover {
+                                                .dropdown-menu {
+                                                    opacity: 1;
+                                                    visibility: visible;
+                                                }
+                                            }
+                                        }
+                                    }
+                                    &.active {
+                                        .nav-link {
+                                            color: $primary;
+                                        }
+                                    }
+                                    &:hover {
+                                        .dropdown-menu {
+                                            opacity: 1;
+                                            visibility: visible;
+                                            transform: translate3d(0, 0, 0);
+                                        }
+                                    }
+                                }
+                            }
+                            &.active {
+                                .nav-link {
+                                    color: $primary;
+                                }
+                            }
+                            &:hover {
+                                .dropdown-menu {
+                                    opacity: 1;
+                                    visibility: visible;
+                                    transform: translate3d(0, 0, 0);
+                                }
+                            }
+                        }
+                    }
+                    &.active {
+                        .nav-link {
+                            color: $primary;
+                        }
+                    }
+                    &:hover {
+                        .dropdown-menu {
+                            opacity: 1;
+                            margin-top: 0;
+                            visibility: visible;
+                            transform: translate3d(0, 0, 0);
+                        }
+                    }
+                }
+            }
+            &:hover {
+                .dropdown-menu {
+                    opacity: 1;
+                    visibility: visible;
+                    transform: translate3d(0, 0, 0);
+                }
+            }
+        }
+    }
+    .others-option {
+        margin-left: 135px;
+
+        .option-item {
+            margin-right: 10px;
+
+            .music-default-btn {
+                padding: 12px 20px;
+            }
+            &:first-child {
+                .music-default-btn {
+                    background: $whiteColor;
+                    color: $blackColor;
+
+                    span {
+                        &::before {
+                            color: $blackColor;
+                        }
+                    }
+                    &:hover {
+                        color: $whiteColor;
+
+                        span {
+                            &::before {
+                                color: $whiteColor;
+                            }
+                        }
+                    }
+                }
+            }
+            &:last-child {
+                margin-right: 0;
+            }
+        }
+    }
+}
+
+/*================================================
+Responsive Sidebar Menu Area CSS
+=================================================*/
+.sidebar-menu-area {
+    border: none !important;
+    background-color: $whiteSmokeColor;
+    width: 400px !important;
+    
+    .offcanvas-header {
+        display: flex;
+        gap: 20px;
+        align-items: center;
+        justify-content: space-between;
+        background-color: transparent;
+        border-bottom: 1px solid $borderColor;
+        padding: 25px 20px;
+
+        .close-btn {
+            border: none;
+            font-size: 25px;
+            transition: $transition;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 35px;
+            width: 35px;
+            line-height: 35px;
+            background-color: $primary;
+            color: $whiteColor;
+            border-radius: 50px;
+            transition: $transition;
+            
+            &:hover {
+                background-color: $primary;
+            }
+        }
+    }
+    .offcanvas-body {
+        background-color: transparent;
+        padding: 35px 20px;
+        
+        .accordion {
+            .accordion-item {
+                border: 0;
+                padding: 0;
+                border-radius: 0;
+                margin-bottom: 35px;
+                color: $blackColor;
+                background-color: transparent;
+
+                .accordion-button {
+                    display: block;
+                    box-shadow: unset;
+                    position: relative;
+                    padding: 0 0 15px 0;
+                    color: $blackColor;
+                    background-color: transparent;
+                    transition: $transition;
+                    border-radius: 0;
+                    border: none;
+                    border-bottom: 1px solid $borderColor;
+                    font-size: $font-fifteen;
+                    font-family: $heading-font-family;
+
+                    &::after {
+                        display: none;
+                    }
+                    &::before {
+                        position: absolute;
+                        content: "\ea4e";
+                        right: 0;
+                        top: 2.5px;
+                        font-family: "remixicon";
+                        font-size: 20px;
+                        transition: $transition;
+                        color: $bodyTextColor;
+                        line-height: 1;
+                    }
+                    &.without-icon {
+                        &::before {
+                            display: none;
+                        }
+                    }
+                    &:hover, &.active {
+                        color: $primary;
+                        
+                        &::before {
+                            color: $primary;
+                        }
+                    }
+                }
+                .accordion-body {
+                    padding: 25px;
+                    background-color: $borderColor2;
+                    border-radius: 0;
+
+                    .accordion-item {
+                        color: $blackColor;
+                        margin-bottom: 20px;
+        
+                        .accordion-link {
+                            width: 100%;
+                            display: block;
+                            color: $blackColor;
+                            background-color: transparent;
+                            font-size: $font-fifteen;
+                            font-family: $heading-font-family;
+
+                            &:hover, &.active {
+                                color: $primary;
+                            }
+                        }
+                        &:last-child {
+                            margin-bottom: 0;
+                        }
+                    }
+                    &.white-wrap {
+                        padding: 20px;
+                        background-color: $whiteColor;
+                    }
+                }
+                &:last-child {
+                    margin-bottom: 0;
+                }
+            }
+        }
+        .others-option {
+            margin-top: 30px;
+
+            .option-item {
+                margin-bottom: 20px;
+                
+                .music-default-btn {
+                    padding: 12px 20px;
+                }
+                &:first-child {
+                    .music-default-btn {
+                        background: $whiteColor;
+                        color: $blackColor;
+
+                        span {
+                            &::before {
+                                color: $blackColor;
+                            }
+                        }
+                        &:hover {
+                            color: $whiteColor;
+
+                            span {
+                                &::before {
+                                    color: $whiteColor;
+                                }
+                            }
+                        }
+                    }
+                }
+                &:last-child {
+                    margin-bottom: 0;
+                }
+            }
+        }
+        /* width */
+        &::-webkit-scrollbar {
+            width: 5px;
+            height: 5px;
+            transition: $transition;
+            border-radius: 50px;
+        }
+        /* Track */
+        &::-webkit-scrollbar-track {
+            background: #F0F0F4;
+            transition: $transition;
+            border-radius: 50px;
+        }
+        /* Handle */
+        &::-webkit-scrollbar-thumb {
+            background: $primary;
+            transition: $transition;
+            border-radius: 50px;
+        }
+        /* Handle on hover */
+        &::-webkit-scrollbar-thumb:hover {  
+            background: $primary;
+            border-radius: 50px;
+        }
+    }
+}
+
+/*================================================
+Music Banner Area CSS
+=================================================*/
+.music-banner-area {
+    .container {
+        overflow: hidden;
+    }
+    .inner {
+        position: relative;
+        z-index: 1;
+        padding: {
+            top: 50px;
+            bottom: 270px;
+        };
+    }
+}
+.music-banner-wave {
+    text-align: center;
+    margin: {
+        left: -30px;
+        bottom: 70px;
+        right: -30px;
+    };
+}
+.music-banner-content {
+    max-width: 857px;
+    margin: auto;
+    text-align: center;
+
+    .sub {
+        display: inline-flex;
+        gap: 12px;
+        align-items: center;
+        justify-content: center;
+        padding: 7px 17px;
+        background-color: $whiteColor;
+        border: 1px solid $borderColor2;
+        border-radius: 50px;
+        margin-bottom: 20px;
+
+        i {
+            display: flex;
+            font-size: $font-seventeen;
+            color: $primary;
+        }
+        span {
+            font-size: $font-fourteen;
+        }
+    }
+    h1 {
+        font-size: 72px;
+        margin-bottom: 15px;
+
+        span {
+            color: $primary;
+        }
+    }
+    p {
+        font-size: $font-sixteen;
+        max-width: 637px;
+        margin: auto;
+    }
+    .banner-btn-list {
+        display: flex;
+        gap: 20px;
+        justify-content: center;
+        align-items: center;
+        margin: {
+            top: 45px;
+            bottom: 0;
+        };
+        padding: {
+            left: 0;
+            right: 0;
+        };
+        li {
+            list-style-type: none;
+        }
+    }
+}
+.music-banner-cards {
+    .music-wrap {
+        background-color: $whiteColor;
+        padding: 17px;
+        border-radius: 10px;
+        position: absolute;
+        left: 70px;
+        bottom: 70px;
+        max-width: 210px;
+        transform: rotate(-10.311deg);
+        transition: $transition;
+
+        .image {
+            img {
+                border-radius: 7px;
+            }
+        }
+        .info {
+            display: flex;
+            overflow: hidden;
+            gap: 12px;
+            align-items: center;
+            margin-top: 15px;
+
+            .left {
+                display: flex;
+                gap: 8px;
+                width: 130px;
+                align-items: center;
+                
+                .arrow {
+                    cursor: pointer;
+                }
+                .play {
+                    i {
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        height: 30px;
+                        width: 30px;
+                        background: $musicGradientColor;
+                        color: $whiteColor;
+                        font-size: $font-fourteen;
+                        border-radius: 50px;
+                        cursor: pointer;
+                        transition: $transition;
+                        position: relative;
+                        overflow: hidden;
+                        z-index: 1;
+
+                        &::after {
+                            position: absolute;
+                            content: "";
+                            inset: 0;
+                            background: $blackColor;
+                            opacity: 0;
+                            transition: all 0.35s ease-in-out;
+                            z-index: -1;
+                        }
+                        &:hover {
+                            &::after {
+                                opacity: 1;
+                            }
+                        }
+                    }
+                }
+            }
+            .right {
+                width: 100%;
+                position: relative;
+                top: 2px;
+
+                .music-progress-bar {
+                    background-color: $borderColor;
+                    height: 2px;
+                    width: 100%;
+                    border-radius: 30px;
+                    position: relative;
+                    z-index: 1;
+                    
+                    &::after {
+                        position: absolute;
+                        content: "";
+                        left: 0;
+                        bottom: 0;
+                        width: 47px;
+                        height: 2px;
+                        border-radius: 30px;
+                        background: $musicGradientColor;
+                        z-index: -1;
+                    }
+                    &::before {
+                        position: absolute;
+                        content: "";
+                        left: 47px;
+                        top: 50%;
+                        transform: translateY(-50%);
+                        width: 7px;
+                        height: 7px;
+                        border-radius: 50px;
+                        background: $musicGradientColor;
+                    }
+                }
+            }
+        }
+        &:hover {
+            transform: rotate(0deg);
+        }
+        &.right-wrap {
+            right: 50px;
+            left: auto;
+            transform: rotate(9.156deg);
+
+            &:hover {
+                transform: rotate(0deg);
+            }
+        }
+    }
+}
+
+/*================================================
+Music Rating Area CSS
+=================================================*/
+.music-rating-area {
+    .inner {
+        padding: {
+            top: 20px;
+            bottom: 20px;
+        };
+    }
+}
+.music-rating-info {
+    display: flex;
+    gap: 15px;
+    align-items: center;
+    justify-content: center;
+
+    .content {
+        .rating {
+            display: flex;
+            gap: 5px;
+            margin-bottom: 0;
+            line-height: 1;
+            padding: {
+                left: 0;
+                right: 0;
+            };
+            li {
+                list-style-type: none;
+
+                i {
+                    display: flex;
+                    color: $bodyTextColor;
+                    font-size: 18px;
+                }
+            }
+        }
+        span {
+            font-size: $font-fourteen;
+            font-family: $heading-font-family;
+            display: block;
+            margin-top: 7px;
+        }
+    }
+}
+
+/*================================================
+Music Works Area CSS
+=================================================*/
+.music-works-area {
+    .container {
+        overflow: hidden;
+        padding: {
+            left: 0;
+            right: 0;
+        };
+    }
+}
+.music-work-tb-border {
+    border-top: 1px solid $borderColor;
+    border-bottom: 1px solid $borderColor;
+
+    .col-lg-4 {
+        &:nth-child(3) {
+            .music-work-card {
+                border-right: none;
+            }
+        }
+        &:nth-child(6) {
+            .music-work-card {
+                border-right: none;
+            }
+        }
+        &:nth-child(9) {
+            .music-work-card {
+                border-right: none;
+            }
+        }
+    }
+}
+.music-work-card {
+    padding: 45px;
+    border-right: 1px solid $borderColor;
+
+    .inner-style {
+        border: 1px solid $borderColor2;
+        padding: 40px;
+        text-align: center;
+        border-radius: 10px;
+        transition: $transition;
+
+        .icon {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 85px;
+            width: 85px;
+            background-color: $whiteColor;
+            border-radius: 10px;
+            margin: auto;
+            transition: $transition;
+
+            i {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                font-size: 45px;
+                background: $musicGradientColor;
+                background-clip: text;
+                -webkit-background-clip: text;
+                -webkit-text-fill-color: transparent;
+            }
+        }
+        .content {
+            margin-top: 40px;
+
+            h3 {
+                font-size: 24px;
+                margin-bottom: 20px;
+            }
+            p {
+                margin-bottom: 0;
+            }
+        }
+        &:hover {
+            background-color: $whiteColor;
+
+            .icon {
+                background-color: $borderColor2;
+            }
+        }
+    }
+}
+
+/*================================================
+Music Partner Area CSS
+=================================================*/
+.music-partner-area {
+    .container {
+        overflow: hidden;
+        padding: {
+            left: 0;
+            right: 0;
+        };
+    }
+    .inner {
+        padding: 0 40px;
+    }
+}
+.music-partner-title {
+    h5 {
+        margin-bottom: 0;
+        font-size: 20px;
+        line-height: 1.4;
+
+        span {
+            font-style: italic;
+            color: $primary;
+        }
+    }
+}
+.music-partner-slider {
+    padding: 50px 0;
+    margin-right: -50px;
+}
+.music-partner-item {
+    text-align: center;
+    position: relative;
+
+    &::before {
+        position: absolute;
+        content: "";
+        left: 0;
+        top: 50%;
+        transform: translateY(-50%);
+        height: 200px;
+        width: 1px;
+        background-color: $borderColor;
+    }
+}
+
+/*================================================
+Music Features Area CSS
+=================================================*/
+.music-features-area {
+    .container {
+        overflow: hidden;
+        padding: {
+            left: 0;
+            right: 0;
+        };
+    }
+}
+.music-features-tb-border {
+    border-top: 1px solid $borderColor;
+    border-bottom: 1px solid $borderColor;
+
+    .col-lg-4 {
+        &:nth-child(3) {
+            .music-features-card {
+                border-right: none;
+            }
+        }
+        &:nth-child(4) {
+            .music-features-card {
+                border-bottom: none;
+            }
+        }
+        &:nth-child(5) {
+            .music-features-card {
+                border-bottom: none;
+            }
+        }
+        &:nth-child(6) {
+            .music-features-card {
+                border-right: none;
+                border-bottom: none;
+            }
+        }
+        &:nth-child(9) {
+            .music-features-card {
+                border-right: none;
+            }
+        }
+    }
+}
+.music-features-card {
+    padding: 45px;
+    border-right: 1px solid $borderColor;
+    border-bottom: 1px solid $borderColor;
+
+    .inner-style {
+        border: 1px solid $borderColor2;
+        padding: 65px 40px;
+        text-align: center;
+        border-radius: 10px;
+        transition: $transition;
+
+        .icon {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 85px;
+            width: 85px;
+            background-color: $whiteColor;
+            border-radius: 10px;
+            margin: auto;
+            transition: $transition;
+
+            i {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                font-size: 45px;
+                background: $musicGradientColor;
+                background-clip: text;
+                -webkit-background-clip: text;
+                -webkit-text-fill-color: transparent;
+            }
+        }
+        .content {
+            margin-top: 40px;
+
+            h3 {
+                font-size: 24px;
+                margin-bottom: 20px;
+            }
+            p {
+                margin-bottom: 0;
+            }
+        }
+        &:hover {
+            background-color: $whiteColor;
+
+            .icon {
+                background-color: $borderColor2;
+            }
+        }
+    }
+}
+
+/*================================================
+Music Fun Area CSS
+=================================================*/
+.music-fun-area {
+    .container {
+        overflow: hidden;
+        padding: {
+            left: 0;
+            right: 0;
+        };
+    }
+    .inner {
+        padding: 65px 70px;
+        position: relative;
+        z-index: 1;
+    }
+}
+.music-fun-items {
+    display: flex;
+    gap: 30px;
+    align-items: center;
+    justify-content: space-between;
+
+    .item {
+        text-align: center;
+        h3 {
+            background: $musicGradientColor;
+            background-clip: text;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            font-size: 48px;
+            font-weight: 400;
+            line-height: 1;
+            margin-bottom: 0;
+        }
+        span {
+            display: block;
+            margin-top: 8px;
+        }
+    }
+}
+.music-fun-wave {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    text-align: center;
+    z-index: -1;
+}
+
+/*================================================
+Music Showcase Area CSS
+=================================================*/
+.music-showcase-area {
+    .container {
+        overflow: hidden;
+        padding: {
+            left: 0;
+            right: 0;
+        };
+    }
+}
+.music-showcase-tabs-inner {
+    .nav {
+        display: flex;
+        gap: 50px;
+        justify-content: center;
+        margin-bottom: 0;
+        border-top: 1px solid $borderColor;
+        border-bottom: 1px solid $borderColor;
+        padding: 20px 0;
+
+        .nav-item {
+            .nav-link {
+                background: transparent;
+                border: none;
+                font-size: $font-fifteen;
+                color: $blackColor;
+                display: flex;
+                padding: 8px 15px;
+                gap: 10px;
+                align-items: center;
+                border-radius: 7px;
+                font-family: $heading-font-family;
+                position: relative;
+                z-index: 1;
+                overflow: hidden;
+                transition: $transition;
+
+                i {
+                    display: flex;
+                    transition: $transition;
+                }
+                &::before {
+                    position: absolute;
+                    content: "";
+                    left: 0;
+                    top: 0;
+                    width: 100%;
+                    height: 100%;
+                    background: $musicGradientColor;
+                    z-index: -1;
+                    opacity: 0;
+                    visibility: hidden;
+                    transition: $transition;
+                }
+                &:hover {
+                    transform: scale(1.05);
+                }
+                &:hover, &.active {
+                    color: $whiteColor;
+
+                    &::before {
+                        opacity: 1;
+                        visibility: visible;
+                    }
+                }
+            }
+        }
+    }
+    .tab-content {
+        .tab-pane {
+            padding: 40px;
+            border-bottom: 1px solid $borderColor;
+        }
+    }
+}
+.music-showcase-card {
+    .show-image {
+        position: relative;
+
+        img {
+            border-radius: 10px;
+        }
+        .showcase-wrap {
+            position: absolute;
+            left: 20px;
+            right: 20px;
+            bottom: 20px;
+            text-align: center;
+            opacity: 0;
+            visibility: hidden;
+            transition: $transition;
+
+            .video-btn {
+                display: block;
+                margin-bottom: 65px;
+
+                i {
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    height: 63px;
+                    width: 63px;
+                    background: rgba(239, 239, 239, 0.43);
+                    color: $whiteColor;
+                    font-size: 30px;
+                    border-radius: 50px;
+                    margin: auto;
+                    transition: $transition;
+                    border-left: 1px solid $whiteColor;
+                    border-right: 1px solid $whiteColor;
+
+                    &:hover {
+                        background: $primary;
+                        border-left: 1px solid $primary;
+                        border-right: 1px solid $primary;
+                    }
+                }
+            }
+            .list {
+                display: flex;
+                gap: 10px;
+                justify-content: center;
+                margin-bottom: 0;
+                padding: {
+                    left: 0;
+                    right: 0;
+                };
+                li {
+                    list-style-type: none;
+                    display: flex;
+                    gap: 7px;
+                    align-items: center;
+                    justify-content: center;
+                    background: rgba(15, 16, 18, 0.30);
+                    color: $whiteColor;
+                    border-radius: 5px;
+                    padding: 5px 10px;
+                    transition: $transition;
+                    border-left: 1px solid $whiteColor;
+                    border-bottom: 1px solid $whiteColor;
+
+                    i {
+                        display: flex;
+                        font-size: 18px;
+                        color: $whiteColor;
+                    }
+                    span {
+                        font-size: 13px;
+                    }
+                    &:hover {
+                        background: $primary;
+                        border-left: 1px solid $primary;
+                        border-bottom: 1px solid $primary;
+                    }
+                }
+            }
+        }
+    }
+    .show-content {
+        margin-top: 20px;
+
+        h3 {
+            font-size: 20px;
+            margin-bottom: 0;
+        }
+        span {
+            font-size: $font-fifteen;
+            display: block;
+            margin-top: 8px;
+        }
+    }
+    &:hover {
+        .show-image {
+            .showcase-wrap {
+                opacity: 1;
+                visibility: visible;
+            }
+        }
+    }
+}
+
+/*================================================
+Music Benefits Area CSS
+=================================================*/
+.music-benefits-area {
+    .container {
+        overflow: hidden;
+        padding: {
+            left: 0;
+            right: 0;
+        };
+    }
+}
+.music-benefits-image {
+    padding: 0 70px;
+}
+.music-benefits-items {
+    border-left: 1px solid $borderColor;
+
+    .item {
+        padding: 55px;
+        border-bottom: 1px solid $borderColor;
+        position: relative;
+        z-index: 1;
+        overflow: hidden;
+        transition: $transition;
+
+        h3 {
+            font-size: 24px;
+            margin-bottom: 15px;
+        }
+        p {
+            margin-bottom: 0;
+        }
+        &::before {
+            position: absolute;
+            content: "";
+            left: 0;
+            right: 0;
+            top: 0;
+            height: 100%;
+            width: 100%;
+            background-color: $whiteColor;
+            z-index: -1;
+            border-radius: 10px;
+            transition: $transition;
+            opacity: 0;
+            visibility: hidden;
+        }
+        &:hover {
+            &::before {
+                opacity: 1;
+                visibility: visible;
+            }
+        }
+        &:last-child {
+            border-bottom: none;
+        }
+    }
+}
+
+/*================================================
+Music Pricing Area CSS
+=================================================*/
+.music-pricing-area {
+    .inner {
+        padding-bottom: 40px;
+
+        .music-section-title {
+            margin-bottom: 0;
+        }
+    }
+}
+.music-pricing-tb-gap {
+    text-align: center;
+
+    .container {
+        padding: {
+            top: 20px;
+            bottom: 20px;
+        };
+    }
+}
+.music-pricing-toggle-billing {
+    margin-bottom: 0;
+    display: inline-flex;
+    gap: 10px;
+    justify-content: center;
+    background-color: $borderColor;
+    padding: 5px;
+    border-radius: 100px;
+
+    li {
+        list-style-type: none;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 10px 15px;
+        background-color: transparent;
+        color: $blackColor;
+        font-size: $font-fifteen;
+        border-radius: 100px;
+        line-height: 1;
+        transition: $transition;
+        cursor: pointer;
+
+        &:hover, &.active {
+            background-color: $whiteColor;
+        }
+    }
+}
+.music-pricing-inner-area {
+    .container {
+        overflow: hidden;
+        padding: {
+            left: 0;
+            right: 0;
+        };
+    }
+}
+.music-pricing-tb-border {
+    border-bottom: 1px solid $borderColor;
+
+    .col-lg-4 {
+        &:nth-child(1) {
+            .music-pricing-card {
+                border-left: none;
+            }
+        }
+    }
+}
+.music-pricing-card {
+    padding: 40px;
+    border-left: 1px solid $borderColor;
+
+    .inner-style {
+        border: 1px solid $borderColor2;
+        padding: 40px;
+        border-radius: 10px;
+        position: relative;
+        z-index: 1;
+        overflow: hidden;
+        transition: $transition;
+
+        .head {
+            display: flex;
+            gap: 18px;
+            align-items: center;
+            margin-bottom: 25px;
+
+            i {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                height: 37px;
+                width: 37px;
+                background-color: $whiteColor;
+                color: $primary;
+                font-size: 20px;
+                border-radius: 5px;
+                transition: $transition;
+            }
+            h3 {
+                font-size: 24px;
+                margin-bottom: 0;
+            }
+        }
+        .price {
+            font-size: 37px;
+            font-family: $heading-font-family;
+            background: $musicGradientColor;
+            background-clip: text;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            line-height: 1;
+            margin-bottom: 20px;
+
+            span {
+                font-size: 20px;
+                font-weight: 400;
+                background: $blackColor;
+                background-clip: text;
+                -webkit-background-clip: text;
+                -webkit-text-fill-color: transparent;
+                position: relative;
+                top: -2px;
+            }
+        }
+        p {
+            border-bottom: 1px solid $borderColor;
+            margin-bottom: 30px;
+            padding-bottom: 25px;
+        }
+        .features {
+            margin-bottom: 0;
+            padding: {
+                left: 0;
+                right: 0;
+            };
+            li {
+                display: flex;
+                gap: 13px;
+                align-items: center;
+                list-style-type: none;
+                color: $blackColor;
+                margin-bottom: 20px;
+
+                i {
+                    display: flex;
+                    font-size: 20px;
+                }
+                span {
+                    font-size: $font-fifteen;
+                }
+                &.gray {
+                    color: $bodyTextColor;
+                    opacity: .70;
+                }
+                &:last-child {
+                    margin-bottom: 0;
+                }
+            }
+        }
+        .price-btn {
+            margin-top: 40px;
+        }
+        .wrap-shape {
+            position: absolute;
+            right: -20px;
+            top: 0;
+            z-index: -1;
+            opacity: 0;
+            visibility: hidden;
+            transition: $transition;
+        }
+        &:hover {
+            background-color: $whiteColor;
+
+            .head {
+                i {
+                    background-color: $borderColor2;
+                }
+            }
+            .wrap-shape {
+                right: 0;
+                opacity: 1;
+                visibility: visible;
+            }
+        }
+    }
+}
+
+/*================================================
+Music Testimonials Area CSS
+=================================================*/
+.music-testimonials-area {
+    .container {
+        overflow: hidden;
+        padding: {
+            left: 0;
+            right: 0;
+        };
+    }
+}
+.music-testimonials-tb-border {
+    border-bottom: 1px solid $borderColor;
+
+    .col-lg-4 {
+        &:nth-child(3) {
+            .music-testimonials-card {
+                border-right: none;
+            }
+        }
+        &:nth-child(6) {
+            .music-testimonials-card {
+                border-right: none;
+            }
+        }
+        &:nth-child(9) {
+            .music-testimonials-card {
+                border-right: none;
+            }
+        }
+    }
+}
+.music-testimonials-card {
+    border-right: 1px solid $borderColor;
+    .top {
+        display: flex;
+        gap: 20px;
+        align-items: center;
+        justify-content: space-between;
+        padding: 17px 40px;
+        border-top: 1px solid $borderColor;
+        border-bottom: 1px solid $borderColor;
+
+        .info {
+            display: flex;
+            gap: 12px;
+            align-items: center;
+
+            .image {
+                img {
+                    max-width: 42px;
+                }
+            }
+            .title {
+                h3 {
+                    font-size: $font-eighteen;
+                    margin-bottom: 0;
+                }
+                span {
+                    display: block;
+                    margin-top: 8px;
+                    font-size: $font-fourteen;
+                    line-height: 1;
+                }
+            }
+        }
+        .quote {
+            i {
+                display: flex;
+                background: $musicGradientColor;
+                background-clip: text;
+                -webkit-background-clip: text;
+                -webkit-text-fill-color: transparent;
+                font-size: 40px;
+            }
+        }
+    }
+    .content {
+        padding: 40px 40px 60px 40px;
+
+        p {
+            margin-bottom: 0;
+        }
+    }
+    &.wrap-center-style {
+        text-align: center;
+        padding: 20px;
+        height: 100%;
+        border-top: 1px solid $borderColor;
+
+        .music-default-btn {
+            padding: 12px 20px;
+        }
+    }
+}
+
+/*================================================
+Music FAQ Area CSS
+=================================================*/
+.music-faq-area {
+    .container {
+        overflow: hidden;
+        padding: {
+            left: 0;
+            right: 0;
+        };
+    }
+    .inner {
+        border-bottom: 1px solid $borderColor;
+    }
+}
+.music-faq-image {
+    padding: {
+        left: 120px;
+        bottom: 75px;
+        right: 120px;
+    };
+    .content {
+        margin-bottom: 35px;
+
+        .sub {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 8px 20px;
+            background-color: $borderColor2;
+            border-radius: 50px;
+            margin-bottom: 20px;
+
+            span {
+                background: $musicGradientColor;
+                background-clip: text;
+                -webkit-background-clip: text;
+                -webkit-text-fill-color: transparent;
+            }
+        }
+        h2 {
+            margin-bottom: 0;
+            font-size: 40px;
+        }
+    }
+    .image {
+        text-align: center;
+
+        img {
+            max-width: 300px;
+        }
+    }
+}
+.music-faq-accordion {
+    position: relative;
+
+    &::before {
+        position: absolute;
+        content: "";
+        left: 0;
+        bottom: 0;
+        height: 755px;
+        width: 1px;
+        background-color: $borderColor;
+    }
+    .accordion {
+        .accordion-item {
+            border: 0;
+            background-color: transparent;
+            border-radius: 0;
+            border-bottom: 1px solid $borderColor;
+            padding: 35px 40px;
+
+            .accordion-button {
+                border: none;
+                box-shadow: unset;
+                position: relative;
+                padding: 0 40px 0 0;
+                background-color: transparent;
+                color: $blackColor;
+                font-size: 20px;
+                font-weight: 500;
+                border-radius: 5px 5px 0 0;
+                transition: $transition;
+                font-family: $heading-font-family;
+
+                &::before {
+                    position: absolute;
+                    content: "\f12a";
+                    top: 0;
+                    right: -5px;
+                    font-family: flaticon_toza !important;
+                    font-size: 20px;
+                    color: $blackColor;
+                    font-weight: 400;
+                    transition: $transition;
+                }
+                &::after {
+                    display: none;
+                }
+                &:not(.collapsed) {
+                    &::before {
+                        transform: rotate(90deg);
+                        right: 0;
+                    }
+                }
+                &.collapsed {
+                    background-color: transparent;
+                }
+            }
+            .accordion-body {
+                padding: 15px 0 0 0;
+
+                p {
+                    a {
+                        color: $primary;
+
+                        &:hover {
+                            color: $primary;
+                        }
+                    }
+                }
+            }
+            &:first-child {
+                border-top: 1px solid $borderColor;
+            }
+            &:last-child {
+                border-bottom: none;
+            }
+        }
+    }
+}
+
+/*================================================
+Music CTA Area CSS
+=================================================*/
+.music-cta-area {
+    .container {
+        overflow: hidden;
+    }
+    .inner {
+        position: relative;
+        z-index: 1;
+    }
+}
+.music-cta-content {
+    text-align: center;
+    max-width: 860px;
+    margin: auto;
+
+    h2 {
+        font-size: 42px;
+        margin-bottom: 0;
+        line-height: 1.3;
+
+        span {
+            color: $primary;
+            font-style: italic;
+        }
+    }
+}
+.music-cta-tb-inner {
+    text-align: center;
+
+    .container {
+        padding: {
+            top: 30px;
+            bottom: 30px;
+        };
+    }
+}
+.music-cta-shape1 {
+    position: absolute;
+    left: 80px;
+    bottom: 65px;
+    z-index: -1;
+    animation: moveBounce 2s linear infinite;
+}
+.music-cta-shape2 {
+    position: absolute;
+    top: 60px;
+    right: 90px;
+    z-index: -1;
+    animation: moveBounce 5s linear infinite;
+}
+.music-cta-shape3 {
+    position: absolute;
+    right: 270px;
+    bottom: 65px;
+    animation: moveBounce 7s linear infinite;
+}
+
+/*================================================
+Music Footer Area CSS
+=================================================*/
+.music-footer-area {
+    .container {
+        overflow: hidden;
+        padding: {
+            left: 0;
+            right: 0;
+        };
+    }
+}
+.music-footer-tb-border {
+    border-top: 1px solid $borderColor;
+    border-bottom: 1px solid $borderColor;
+
+    .col-lg-4 {
+        &:nth-child(3) {
+            .music-footer-widget {
+                border-right: none;
+            }
+        }
+    }
+}
+.music-footer-widget {
+    border-right: 1px solid $borderColor;
+
+    h3 {
+        font-size: 20px;
+        margin-bottom: 0;
+        padding: 30px 40px;
+    }
+    .list {
+        margin-bottom: 0;
+        padding: {
+            left: 0;
+            right: 0;
+        };
+        li {
+            list-style-type: none;
+            padding: 20px 40px;
+            font-size: $font-fifteen;
+            border-top: 1px solid $borderColor;
+
+            a {
+                color: $bodyTextColor;
+                position: relative;
+                padding-left: 18px;
+
+                &::before {
+                    position: absolute;
+                    content: "";
+                    left: 0;
+                    top: 50%;
+                    transform: translateY(-50%);
+                    height: 8px;
+                    width: 8px;
+                    background-color: #D9D9D9;
+                    border-radius: 50px;
+                    transition: $transition;
+                }
+                &:hover {
+                    &::before {
+                        background-color: $primary;
+                    }
+                }
+            }
+        }
+    }
+}
+.music-footer-widget-logo {
+    text-align: center;
+    padding: {
+        top: 40px;
+        bottom: 40px;
+    };
+}
+.music-copyright-area {
+    padding: 25px 40px;
+    border-top: 1px solid $borderColor;
+    border-bottom: 1px solid $borderColor;
+
+    p {
+        font-size: $font-fourteen;
+
+        span {
+            background: $musicGradientColor;
+            background-clip: text;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        a {
+            background: $musicGradientColor;
+            background-clip: text;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            position: relative;
+
+            &::before {
+                position: absolute;
+                content: "";
+                left: 0;
+                bottom: 0;
+                width: 0%;
+                height: 1px;
+                background: $musicGradientColor;
+                transition: $transition;
+            }
+            &:hover {
+                font-weight: 500;
+
+                &::before {
+                    width: 100%;
+                }
+            }
+        }
+    }
+    .social-list {
+        display: flex;
+        gap: 10px;
+        align-items: center;
+        justify-content: end;
+        margin-bottom: 0;
+        line-height: 1;
+        padding: {
+            left: 0;
+            right: 0;
+        };
+        li {
+            list-style-type: none;
+
+            a {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                height: 32px;
+                width: 32px;
+                background-color: $borderColor;
+                border-radius: 5px;
+                transition: $transition;
+
+                i {
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    font-size: 18px;
+                    background: $musicGradientColor;
+                    background-clip: text;
+                    -webkit-background-clip: text;
+                    -webkit-text-fill-color: transparent;
+                }
+                &:hover {
+                    background-color: $whiteColor;
+                }
+            }
+        }
+    }
+}
+.music-footer-wave {
+    text-align: center;
+    padding: {
+        top: 50px;
+        bottom: 50px;
+    };
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*================================================
+Back to Top CSS
+=================================================*/
+#back-to-top {
+    opacity: 0;
+    right: 20px;
+    z-index: 99;
+    bottom: 20px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    height: 35px;
+    width: 35px;
+    line-height: 35px;
+    font-size: 25px;
+    transition: $transition;
+    background: $primary;
+    color: $whiteColor;
+    border-radius: 50%;
+    
+    &:hover {
+        background: $blackColor;
+    }
+}
