@@ -12900,7 +12900,7 @@ Music Section Title CSS
 .music-section-title h2, .music-section-title .h2 {
   margin-bottom: 0;
   font-size: 40px;
-  max-width: 610px;
+  max-width: 635px;
   margin: auto;
 }
 .music-section-title h2 span, .music-section-title .h2 span {
@@ -12940,6 +12940,7 @@ Preloader Area CSS
   animation-delay: 0.4s;
 }
 
+/* Start Music & Media Demo CSS */
 /*================================================
 Top Bar Area CSS
 =================================================*/
@@ -13646,6 +13647,7 @@ Music Works Area CSS
   text-align: center;
   border-radius: 10px;
   transition: 0.7s;
+  position: relative;
 }
 .music-work-card .inner-style .icon {
   display: flex;
@@ -13677,6 +13679,17 @@ Music Works Area CSS
 }
 .music-work-card .inner-style .content p {
   margin-bottom: 0;
+}
+.music-work-card .inner-style .number {
+  font-size: 48px;
+  font-style: italic;
+  font-weight: 400;
+  position: absolute;
+  top: 40px;
+  right: 45px;
+  color: rgba(128, 129, 131, 0.45);
+  font-family: "Instrument Sans", sans-serif;
+  line-height: 1;
 }
 .music-work-card .inner-style:hover {
   background-color: #ffffff;
@@ -13752,9 +13765,6 @@ Music Features Area CSS
 .music-features-tb-border .col-lg-4:nth-child(6) .music-features-card {
   border-right: none;
   border-bottom: none;
-}
-.music-features-tb-border .col-lg-4:nth-child(9) .music-features-card {
-  border-right: none;
 }
 
 .music-features-card {
@@ -14485,6 +14495,842 @@ Music CTA Area CSS
 }
 
 /*================================================
+Music Page Banner Area CSS
+=================================================*/
+.music-page-banner-area {
+  overflow: hidden;
+}
+.music-page-banner-area .inner {
+  padding-top: 65px;
+  padding-bottom: 65px;
+}
+
+.music-page-banner-content {
+  max-width: 860px;
+  margin: auto;
+  text-align: center;
+}
+.music-page-banner-content .meta {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 5px 17px;
+  background-color: #ffffff;
+  border: 1px solid #EFEFEF;
+  border-radius: 50px;
+  margin-bottom: 15px;
+}
+.music-page-banner-content .meta li {
+  list-style-type: none;
+  font-size: 14px;
+  position: relative;
+  margin-right: 35px;
+}
+.music-page-banner-content .meta li a {
+  color: #000DFF;
+}
+.music-page-banner-content .meta li a:hover {
+  color: #0F1012;
+}
+.music-page-banner-content .meta li::before {
+  position: absolute;
+  content: "\ea6e";
+  right: -25px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-family: "remixicon" !important;
+}
+.music-page-banner-content .meta li:last-child {
+  margin-right: 0;
+}
+.music-page-banner-content .meta li:last-child::before {
+  display: none;
+}
+.music-page-banner-content h1, .music-page-banner-content .h1 {
+  font-size: 72px;
+  margin-bottom: 15px;
+}
+.music-page-banner-content p {
+  margin-bottom: 0;
+  max-width: 637px;
+  margin: auto;
+  font-size: 16px;
+}
+
+.music-page-banner-cards {
+  max-width: 695px;
+  margin: 70px auto 15px;
+}
+.music-page-banner-cards .music-wrap {
+  background-color: #ffffff;
+  padding: 17px;
+  border-radius: 10px;
+  max-width: 210px;
+  transform: rotate(-10.311deg);
+  transition: 0.7s;
+}
+.music-page-banner-cards .music-wrap .image img {
+  border-radius: 7px;
+}
+.music-page-banner-cards .music-wrap .info {
+  display: flex;
+  overflow: hidden;
+  gap: 12px;
+  align-items: center;
+  margin-top: 15px;
+}
+.music-page-banner-cards .music-wrap .info .left {
+  display: flex;
+  gap: 8px;
+  width: 130px;
+  align-items: center;
+}
+.music-page-banner-cards .music-wrap .info .left .arrow {
+  cursor: pointer;
+}
+.music-page-banner-cards .music-wrap .info .left .play i {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 30px;
+  width: 30px;
+  background: linear-gradient(135deg, #6B73FF 0%, #000DFF 100%);
+  color: #ffffff;
+  font-size: 14px;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: 0.7s;
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+}
+.music-page-banner-cards .music-wrap .info .left .play i::after {
+  position: absolute;
+  content: "";
+  inset: 0;
+  background: #0F1012;
+  opacity: 0;
+  transition: all 0.35s ease-in-out;
+  z-index: -1;
+}
+.music-page-banner-cards .music-wrap .info .left .play i:hover::after {
+  opacity: 1;
+}
+.music-page-banner-cards .music-wrap .info .right {
+  width: 100%;
+  position: relative;
+  top: 2px;
+}
+.music-page-banner-cards .music-wrap .info .right .music-progress-bar {
+  background-color: #EAEAEA;
+  height: 2px;
+  width: 100%;
+  border-radius: 30px;
+  position: relative;
+  z-index: 1;
+}
+.music-page-banner-cards .music-wrap .info .right .music-progress-bar::after {
+  position: absolute;
+  content: "";
+  left: 0;
+  bottom: 0;
+  width: 47px;
+  height: 2px;
+  border-radius: 30px;
+  background: linear-gradient(135deg, #6B73FF 0%, #000DFF 100%);
+  z-index: -1;
+}
+.music-page-banner-cards .music-wrap .info .right .music-progress-bar::before {
+  position: absolute;
+  content: "";
+  left: 47px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 7px;
+  height: 7px;
+  border-radius: 50px;
+  background: linear-gradient(135deg, #6B73FF 0%, #000DFF 100%);
+}
+.music-page-banner-cards .music-wrap.wrap2 {
+  transform: unset;
+  margin-top: -15px;
+}
+.music-page-banner-cards .music-wrap.wrap3 {
+  transform: rotate(9.156deg);
+}
+
+/*================================================
+Music About Area CSS
+=================================================*/
+.music-about-area .container {
+  overflow: hidden;
+  padding-left: 0;
+  padding-right: 0;
+}
+.music-about-area .inner {
+  border-bottom: 1px solid #EAEAEA;
+}
+
+.music-about-image {
+  padding: 40px;
+  border-right: 1px solid #EAEAEA;
+}
+.music-about-image img {
+  border-radius: 10px;
+}
+.music-about-image.wrap-style2 {
+  border-left: 1px solid #EAEAEA;
+  border-right: none;
+}
+
+.music-about-content {
+  padding: 0 70px;
+}
+.music-about-content h3, .music-about-content .h3 {
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+.music-about-content p {
+  margin-bottom: 0;
+}
+
+/*================================================
+Music Blog Area CSS
+=================================================*/
+.music-blog-area .container {
+  overflow: hidden;
+  padding-left: 0;
+  padding-right: 0;
+}
+
+.music-blog-tb-border {
+  border-bottom: 1px solid #EAEAEA;
+}
+.music-blog-tb-border .col-lg-4:nth-child(3) .music-blog-card {
+  border-right: none;
+}
+.music-blog-tb-border .col-lg-4:nth-child(4) .music-blog-card {
+  border-bottom: none;
+}
+.music-blog-tb-border .col-lg-4:nth-child(5) .music-blog-card {
+  border-bottom: none;
+}
+.music-blog-tb-border .col-lg-4:nth-child(6) .music-blog-card {
+  border-right: none;
+  border-bottom: none;
+}
+
+.music-blog-card {
+  padding: 40px;
+  height: 100%;
+  border-right: 1px solid #EAEAEA;
+  border-bottom: 1px solid #EAEAEA;
+}
+.music-blog-card .inner-style {
+  border: 1px solid #EFEFEF;
+  padding: 30px;
+  border-radius: 10px;
+  transition: 0.7s;
+}
+.music-blog-card .inner-style .image a img {
+  border-radius: 10px;
+}
+.music-blog-card .inner-style .content {
+  margin-top: 25px;
+}
+.music-blog-card .inner-style .content .meta-list {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+  margin-bottom: 15px;
+  padding-left: 0;
+  padding-right: 0;
+}
+.music-blog-card .inner-style .content .meta-list li {
+  display: flex;
+  gap: 7px;
+  align-items: center;
+  list-style-type: none;
+  font-size: 15px;
+}
+.music-blog-card .inner-style .content .meta-list li a {
+  color: #808183;
+}
+.music-blog-card .inner-style .content .meta-list li a:hover {
+  color: #000DFF;
+}
+.music-blog-card .inner-style .content h3, .music-blog-card .inner-style .content .h3 {
+  font-size: 24px;
+  margin-bottom: 15px;
+}
+.music-blog-card .inner-style .content p {
+  margin-bottom: 0;
+}
+.music-blog-card .inner-style:hover {
+  background-color: #ffffff;
+}
+.music-blog-card .inner-style:hover .icon {
+  background-color: #EFEFEF;
+}
+
+/*================================================
+Music Blog Details Area CSS
+=================================================*/
+.music-blog-details-area .container {
+  padding-left: 0;
+  padding-right: 0;
+}
+.music-blog-details-area .inner {
+  border-bottom: 1px solid #EAEAEA;
+}
+
+.music-blog-details-desc {
+  padding: 50px;
+  border-right: 1px solid #EAEAEA;
+}
+.music-blog-details-desc .desc-image {
+  margin-bottom: 35px;
+}
+.music-blog-details-desc .desc-image img {
+  border-radius: 10px;
+}
+.music-blog-details-desc h3, .music-blog-details-desc .h3 {
+  font-size: 35px;
+  margin-top: 35px;
+  margin-bottom: 15px;
+}
+.music-blog-details-desc .list {
+  margin-bottom: 0;
+  padding-left: 0;
+  padding-right: 0;
+}
+.music-blog-details-desc .list li {
+  list-style-type: none;
+  font-size: 15px;
+  margin-bottom: 15px;
+}
+.music-blog-details-desc .list li:last-child {
+  margin-bottom: 0;
+}
+.music-blog-details-desc .block-images {
+  margin-top: 10px;
+}
+.music-blog-details-desc .block-images .block-image img {
+  border-radius: 10px;
+}
+.music-blog-details-desc .article-footer {
+  background-color: #EAEAEA;
+  margin-top: 35px;
+  padding: 15px 25px;
+  border-radius: 20px;
+}
+.music-blog-details-desc .article-footer .tags {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 0;
+  padding-left: 0;
+  padding-right: 0;
+}
+.music-blog-details-desc .article-footer .tags li {
+  list-style-type: none;
+}
+.music-blog-details-desc .article-footer .tags li span {
+  font-weight: 500;
+  color: #0F1012;
+}
+.music-blog-details-desc .article-footer .tags li a {
+  display: inline-flex;
+  padding: 7px 15px;
+  justify-content: center;
+  align-items: center;
+  line-height: 1;
+  font-size: 15px;
+  font-family: "Instrument Sans", sans-serif;
+  border: 1px solid #ffffff;
+  color: #808183;
+  border-radius: 50px;
+  transition: 0.7s;
+}
+.music-blog-details-desc .article-footer .tags li a:hover {
+  border: 1px solid #000DFF;
+}
+.music-blog-details-desc .article-footer .social {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  justify-content: end;
+  margin-bottom: 0;
+  line-height: 1;
+  padding-left: 0;
+  padding-right: 0;
+}
+.music-blog-details-desc .article-footer .social li {
+  list-style-type: none;
+}
+.music-blog-details-desc .article-footer .social li span {
+  font-weight: 500;
+  color: #0F1012;
+}
+.music-blog-details-desc .article-footer .social li a {
+  margin-right: 7px;
+}
+.music-blog-details-desc .article-footer .social li a i {
+  color: #000DFF;
+}
+.music-blog-details-desc .article-footer .social li a i:hover {
+  color: #0F1012;
+}
+.music-blog-details-desc .article-footer .social li a:last-child {
+  margin-right: 0;
+}
+.music-blog-details-desc .desc-comment {
+  margin-top: 50px;
+}
+.music-blog-details-desc .desc-comment h2, .music-blog-details-desc .desc-comment .h2 {
+  font-size: 35px;
+  margin-bottom: 30px;
+}
+.music-blog-details-desc .desc-comment .comment-list {
+  position: relative;
+  padding-left: 65px;
+  margin-bottom: 35px;
+}
+.music-blog-details-desc .desc-comment .comment-list img {
+  border-radius: 50px;
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+.music-blog-details-desc .desc-comment .comment-list h4, .music-blog-details-desc .desc-comment .comment-list .h4 {
+  font-size: 20px;
+  margin-bottom: 0;
+}
+.music-blog-details-desc .desc-comment .comment-list span {
+  font-size: 14px;
+  display: block;
+  margin-top: 8px;
+  margin-bottom: 15px;
+}
+.music-blog-details-desc .desc-comment .comment-list .comment-reply-btn {
+  border: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 5px 15px;
+  background-color: #EAEAEA;
+  color: #0F1012;
+  font-size: 14px;
+  transition: 0.7s;
+  border-radius: 30px;
+}
+.music-blog-details-desc .desc-comment .comment-list .comment-reply-btn:hover {
+  background-color: #000DFF;
+  color: #ffffff;
+}
+.music-blog-details-desc .desc-comment .comment-list:last-child {
+  margin-bottom: 0;
+}
+.music-blog-details-desc .desc-form {
+  margin-top: 50px;
+  background-color: #EAEAEA;
+  padding: 35px;
+  border-radius: 10px;
+}
+.music-blog-details-desc .desc-form .content {
+  margin-bottom: 30px;
+}
+.music-blog-details-desc .desc-form .content h2, .music-blog-details-desc .desc-form .content .h2 {
+  font-size: 35px;
+  margin-bottom: 10px;
+}
+.music-blog-details-desc .desc-form .form-group {
+  margin-bottom: 25px;
+}
+.music-blog-details-desc .desc-form .form-group label {
+  display: block;
+  margin-bottom: 8px;
+  color: #0F1012;
+  font-size: 14px;
+  font-weight: 500;
+}
+.music-blog-details-desc .desc-form .form-group .form-control {
+  display: inline-block;
+  height: 57px;
+  background-color: #ffffff;
+  color: #808183;
+  outline: 0;
+  box-shadow: unset;
+  border: 1px solid #ffffff;
+  border-radius: 10px;
+  padding: 15px 25px;
+  transition: 0.7s;
+  font-size: 14px;
+}
+.music-blog-details-desc .desc-form .form-group .form-control::placeholder {
+  color: #808183;
+  transition: 0.7s;
+}
+.music-blog-details-desc .desc-form .form-group .form-control:focus {
+  border: 1px solid #000DFF;
+}
+.music-blog-details-desc .desc-form .form-group .form-control:focus::placeholder {
+  color: transparent;
+}
+.music-blog-details-desc .desc-form .form-group textarea.form-control {
+  min-height: 100px;
+}
+.music-blog-details-desc .desc-form .form-group .form-check {
+  display: flex;
+  gap: 7px;
+  align-items: center;
+  margin-bottom: 0;
+}
+.music-blog-details-desc .desc-form .form-group .form-check .form-check-input {
+  box-shadow: unset;
+  outline: 0;
+  margin-top: 0;
+}
+.music-blog-details-desc .desc-form .form-group .form-check .form-check-label {
+  margin-bottom: 0;
+  color: #808183;
+}
+.music-blog-details-desc .desc-form .form-group .form-check .form-check-label a {
+  color: #000DFF;
+}
+.music-blog-details-desc .desc-form .form-group .form-check .form-check-label a:hover {
+  color: #0F1012;
+}
+.music-blog-details-desc .desc-form .music-default-btn {
+  border: none;
+}
+
+.music-widget-area {
+  padding: 50px 35px 50px 50px;
+  position: sticky;
+  top: 40px;
+}
+.music-widget-area .widget {
+  margin-bottom: 50px;
+}
+.music-widget-area .widget .widget-title {
+  font-size: 23.5px;
+  margin-bottom: 20px;
+}
+.music-widget-area .widget:last-child {
+  margin-bottom: 0;
+}
+.music-widget-area .widget_search form {
+  position: relative;
+}
+.music-widget-area .widget_search form .form-control {
+  display: inline-block;
+  width: 100%;
+  height: 57px;
+  border-radius: 5px;
+  outline: 0;
+  box-shadow: unset;
+  background-color: #ffffff;
+  border: 1px solid #ffffff;
+  padding: 15px 55px 15px 20px;
+  transition: 0.7s;
+  color: #808183;
+  font-size: 14px;
+}
+.music-widget-area .widget_search form .form-control::placeholder {
+  transition: 0.7s;
+  color: #808183;
+}
+.music-widget-area .widget_search form .form-control:focus {
+  border: 1px solid #000DFF;
+}
+.music-widget-area .widget_search form .form-control:focus::placeholder {
+  color: transparent;
+}
+.music-widget-area .widget_search form button {
+  background-color: transparent;
+  border: none;
+  position: absolute;
+  right: 20px;
+  top: 50%;
+  transform: translateY(-50%);
+  padding: 0;
+  margin: 0;
+  line-height: 1;
+}
+.music-widget-area .widget_posts_thumb .items .item {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+  margin-bottom: 25px;
+}
+.music-widget-area .widget_posts_thumb .items .item .image a img {
+  border-radius: 10px;
+  max-width: 70px;
+}
+.music-widget-area .widget_posts_thumb .items .item .content .meta-list {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+  margin-bottom: 15px;
+  line-height: 1;
+  padding-left: 0;
+  padding-right: 0;
+}
+.music-widget-area .widget_posts_thumb .items .item .content .meta-list li {
+  display: flex;
+  gap: 7px;
+  align-items: center;
+  list-style-type: none;
+  font-size: 15px;
+}
+.music-widget-area .widget_posts_thumb .items .item .content .meta-list li a {
+  color: #808183;
+}
+.music-widget-area .widget_posts_thumb .items .item .content .meta-list li a:hover {
+  color: #000DFF;
+}
+.music-widget-area .widget_posts_thumb .items .item .content h3, .music-widget-area .widget_posts_thumb .items .item .content .h3 {
+  font-size: 18px;
+  margin-bottom: 0;
+}
+.music-widget-area .widget_posts_thumb .items .item:last-child {
+  margin-bottom: 0;
+}
+.music-widget-area .widget_categories .list {
+  padding-left: 0;
+  margin-bottom: 0;
+}
+.music-widget-area .widget_categories .list li {
+  display: flex;
+  gap: 10px;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 15px;
+}
+.music-widget-area .widget_categories .list li a {
+  color: #0F1012;
+  font-weight: 500;
+}
+.music-widget-area .widget_categories .list li a:hover {
+  color: #000DFF;
+}
+.music-widget-area .widget_categories .list li span {
+  color: #808183;
+}
+.music-widget-area .widget_categories .list li:last-child {
+  margin-bottom: 0;
+}
+.music-widget-area .widget_tag_cloud .tag-cloud {
+  margin-top: -8px;
+}
+.music-widget-area .widget_tag_cloud .tag-cloud a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 5px 15px;
+  border-radius: 50px;
+  background-color: #ffffff;
+  color: #808183;
+  font-size: 15px;
+  transition: 0.7s;
+  font-family: "Instrument Sans", sans-serif;
+  margin-top: 8px;
+  margin-right: 7px;
+}
+.music-widget-area .widget_tag_cloud .tag-cloud a:hover {
+  background-color: #000DFF;
+  color: #ffffff;
+}
+
+/*================================================
+Profile Authentication Area CSS
+=================================================*/
+.profile-authentication-area .container {
+  padding-left: 0;
+  padding-right: 0;
+}
+.profile-authentication-area .inner {
+  border-bottom: 1px solid #EAEAEA;
+}
+
+.pa-list-inner .pa-list {
+  display: flex;
+  justify-content: center;
+  border: none;
+  justify-content: center;
+  padding: 20px 0;
+  margin-bottom: 0;
+}
+.pa-list-inner .pa-list li {
+  list-style-type: none;
+  margin-right: 15px;
+}
+.pa-list-inner .pa-list li a {
+  border: none;
+  background-color: transparent;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 7px 20px;
+  background-color: #EAEAEA;
+  color: #0F1012;
+  font-size: 15px;
+  border-radius: 50px;
+  transition: 0.7s;
+}
+.pa-list-inner .pa-list li a:hover, .pa-list-inner .pa-list li a.active {
+  background-color: #ffffff;
+}
+.pa-list-inner .pa-list li:last-child {
+  margin-right: 0;
+}
+
+.profile-authentication-form {
+  max-width: 670px;
+  margin: auto;
+  padding: 60px 90px;
+  border-left: 1px solid #EAEAEA;
+  border-right: 1px solid #EAEAEA;
+}
+.profile-authentication-form .btn-list {
+  margin-bottom: 25px;
+  padding-left: 0;
+  padding-right: 0;
+}
+.profile-authentication-form .btn-list li {
+  list-style-type: none;
+  margin-bottom: 20px;
+}
+.profile-authentication-form .btn-list li button {
+  border: none;
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  justify-content: center;
+  padding: 12px 20px;
+  font-size: 15px;
+  border-radius: 7px;
+  background-color: #ffffff;
+  color: #0F1012;
+  width: 100%;
+  transition: 0.7s;
+}
+.profile-authentication-form .btn-list li button i {
+  display: flex;
+}
+.profile-authentication-form .btn-list li button:hover {
+  background-color: #000DFF;
+  color: #ffffff;
+}
+.profile-authentication-form .btn-list li:last-child {
+  margin-bottom: 0;
+}
+.profile-authentication-form .btn-list li:last-child button {
+  background-color: #0F1012;
+  color: #ffffff;
+}
+.profile-authentication-form .btn-list li:last-child button:hover {
+  background-color: #000DFF;
+  color: #ffffff;
+}
+.profile-authentication-form .or {
+  display: block;
+  font-size: 15px;
+  text-align: center;
+  margin-bottom: 50px;
+}
+.profile-authentication-form .form-group {
+  margin-bottom: 25px;
+}
+.profile-authentication-form .form-group label {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 8px;
+  color: #808183;
+  font-size: 14px;
+  font-weight: 500;
+}
+.profile-authentication-form .form-group label a {
+  background: linear-gradient(135deg, #6B73FF 0%, #000DFF 100%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.profile-authentication-form .form-group .form-control {
+  display: inline-block;
+  height: 55px;
+  background-color: #ffffff;
+  color: #808183;
+  outline: 0;
+  box-shadow: unset;
+  border: 1px solid #ffffff;
+  border-radius: 7px;
+  padding: 15px 25px;
+  transition: 0.7s;
+  font-size: 14px;
+}
+.profile-authentication-form .form-group .form-control::placeholder {
+  color: #808183;
+  transition: 0.7s;
+}
+.profile-authentication-form .form-group .form-control:focus {
+  border: 1px solid #000DFF;
+}
+.profile-authentication-form .form-group .form-control:focus::placeholder {
+  color: transparent;
+}
+.profile-authentication-form .music-default-btn {
+  width: 100%;
+  border: none;
+}
+.profile-authentication-form p {
+  text-align: center;
+  margin-top: 30px;
+}
+.profile-authentication-form p a {
+  background: linear-gradient(135deg, #6B73FF 0%, #000DFF 100%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.profile-authentication-form span {
+  display: block;
+  text-align: center;
+}
+.profile-authentication-form span a {
+  background: linear-gradient(135deg, #6B73FF 0%, #000DFF 100%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/*================================================
+Music Contact Area CSS
+=================================================*/
+.music-contact-area .container {
+  padding-left: 0;
+  padding-right: 0;
+}
+.music-contact-area .inner {
+  border-bottom: 1px solid #EAEAEA;
+}
+
+.music-contact-top-title {
+  text-align: center;
+}
+.music-contact-top-title .container {
+  padding-top: 25px;
+  padding-bottom: 25px;
+}
+.music-contact-top-title h3, .music-contact-top-title .h3 {
+  margin-bottom: 0;
+  font-size: 20px;
+}
+
+/*================================================
 Music Footer Area CSS
 =================================================*/
 .music-footer-area .container {
@@ -14625,6 +15471,62 @@ Music Footer Area CSS
   text-align: center;
   padding-top: 50px;
   padding-bottom: 50px;
+}
+
+/* End Music & Media Demo CSS */
+/*================================================
+Pagination CSS
+=================================================*/
+.pagination-area {
+  display: flex;
+  justify-content: center;
+  user-select: none;
+  border-bottom: 1px solid #EAEAEA;
+  padding-top: 30px;
+  padding-bottom: 30px;
+}
+.pagination-area a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 35px;
+  width: 35px;
+  line-height: 35px;
+  font-weight: 500;
+  font-size: 18px;
+  background-color: transparent;
+  color: #0F1012;
+  border-radius: 50px;
+  transition: 0.7s;
+  margin: 0 5px;
+  position: relative;
+  z-index: 1;
+  overflow: hidden;
+}
+.pagination-area a::before {
+  position: absolute;
+  content: "";
+  left: 0;
+  right: 0;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  background: linear-gradient(135deg, #6B73FF 0%, #000DFF 100%);
+  z-index: -1;
+  opacity: 0;
+  transition: 0.7s;
+}
+.pagination-area a:hover, .pagination-area a.active {
+  color: #ffffff;
+}
+.pagination-area a:hover::before, .pagination-area a.active::before {
+  opacity: 1;
+}
+.pagination-area a:first-child {
+  margin-left: 0;
+}
+.pagination-area a:last-child {
+  margin-right: 0;
 }
 
 /*================================================
