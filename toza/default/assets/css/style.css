@@ -12875,6 +12875,71 @@ Default Btn Area CSS
   color: #ffffff;
 }
 
+.marketing-default-btn {
+  display: inline-flex;
+  gap: 5px;
+  align-items: center;
+  justify-content: center;
+  padding: 18px 28px;
+  background: linear-gradient(135deg, #FAB2FF 0%, #1904E5 100%);
+  color: #ffffff;
+  font-family: "Instrument Sans", sans-serif;
+  font-size: 15px;
+  border-radius: 7px;
+  line-height: 1;
+  overflow: hidden;
+  position: relative;
+  z-index: 1;
+  transition: all 0.35s ease-in-out;
+}
+.marketing-default-btn span {
+  transition: transform 0.35s ease;
+  position: relative;
+  z-index: 2;
+}
+.marketing-default-btn i {
+  display: flex;
+  font-size: 13px;
+  position: relative;
+  right: -2px;
+  transition: transform 0.35s ease;
+  z-index: 2;
+}
+.marketing-default-btn::after {
+  position: absolute;
+  content: "";
+  inset: 0;
+  background: linear-gradient(135deg, #FAB2FF 0%, #1904E5 100%);
+  opacity: 0;
+  transform: scale(0.9);
+  transition: all 0.35s ease-in-out;
+  z-index: -1;
+}
+.marketing-default-btn:hover {
+  color: #ffffff;
+  transform: scale(1.05);
+}
+.marketing-default-btn:hover span {
+  transform: translateX(4px);
+}
+.marketing-default-btn:hover i {
+  transform: translateX(3px) rotate(5deg);
+}
+.marketing-default-btn:hover::after {
+  opacity: 1;
+  transform: scale(1);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
+}
+.marketing-default-btn.border-wrap {
+  background: linear-gradient(#ffffff, #ffffff) padding-box, linear-gradient(60deg, #FAB2FF, #1904E5) border-box;
+  border: 1px solid transparent;
+  color: #1904E5;
+  padding: 17px 28px;
+}
+.marketing-default-btn.border-wrap:hover {
+  color: #ffffff;
+}
+
 /*================================================
 Music Section Title CSS
 =================================================*/
@@ -12947,6 +13012,18 @@ Top Bar Area CSS
 .top-bar-area .inner {
   padding-top: 15px;
   padding-bottom: 15px;
+}
+.top-bar-area.marketing-bar {
+  border-bottom: 1px solid #EFEFEF;
+}
+.top-bar-area.marketing-bar .top-bar-content span a {
+  background: linear-gradient(135deg, #FAB2FF 0%, #1904E5 100%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.top-bar-area.marketing-bar .top-bar-content span a::before {
+  background: linear-gradient(135deg, #FAB2FF 0%, #1904E5 100%);
 }
 
 .top-bar-content {
@@ -13230,6 +13307,73 @@ Navbar Area CSS
   margin-right: 0;
 }
 
+.marketing-navbar {
+  padding: 10px 0;
+}
+.marketing-navbar .container-fluid, .marketing-navbar .container-sm, .marketing-navbar .container-md, .marketing-navbar .container-lg, .marketing-navbar .container-xl, .marketing-navbar .container-xxl {
+  padding-left: 20px;
+  padding-right: 20px;
+}
+.marketing-navbar .navbar-nav {
+  margin: auto;
+}
+.marketing-navbar .navbar-nav .nav-item .nav-link {
+  color: #0F1012;
+  font-weight: 500;
+}
+.marketing-navbar .navbar-nav .nav-item .nav-link:hover, .marketing-navbar .navbar-nav .nav-item .nav-link.active {
+  color: #1904E5;
+}
+.marketing-navbar .navbar-nav .nav-item:hover, .marketing-navbar .navbar-nav .nav-item.active {
+  color: #1904E5;
+}
+.marketing-navbar .navbar-nav .nav-item .dropdown-menu .nav-item .nav-link {
+  color: #0F1012;
+  font-weight: 400;
+}
+.marketing-navbar .navbar-nav .nav-item .dropdown-menu .nav-item .nav-link.active, .marketing-navbar .navbar-nav .nav-item .dropdown-menu .nav-item .nav-link:hover {
+  color: #1904E5;
+}
+.marketing-navbar .navbar-nav .nav-item .dropdown-menu .nav-item .dropdown-menu .nav-item .nav-link {
+  color: #0F1012;
+}
+.marketing-navbar .navbar-nav .nav-item .dropdown-menu .nav-item .dropdown-menu .nav-item .nav-link.active, .marketing-navbar .navbar-nav .nav-item .dropdown-menu .nav-item .dropdown-menu .nav-item .nav-link:hover {
+  color: #1904E5;
+}
+.marketing-navbar .navbar-nav .nav-item .dropdown-menu .nav-item .dropdown-menu .nav-item .dropdown-menu .nav-item .nav-link {
+  color: #0F1012;
+}
+.marketing-navbar .navbar-nav .nav-item .dropdown-menu .nav-item .dropdown-menu .nav-item .dropdown-menu .nav-item .nav-link.active, .marketing-navbar .navbar-nav .nav-item .dropdown-menu .nav-item .dropdown-menu .nav-item .dropdown-menu .nav-item .nav-link:hover {
+  color: #1904E5;
+}
+.marketing-navbar .navbar-nav .nav-item .dropdown-menu .nav-item .dropdown-menu .nav-item .dropdown-menu .nav-item .dropdown-menu .nav-item .nav-link {
+  color: #0F1012;
+}
+.marketing-navbar .navbar-nav .nav-item .dropdown-menu .nav-item .dropdown-menu .nav-item .dropdown-menu .nav-item .dropdown-menu .nav-item .nav-link.active, .marketing-navbar .navbar-nav .nav-item .dropdown-menu .nav-item .dropdown-menu .nav-item .dropdown-menu .nav-item .dropdown-menu .nav-item .nav-link:hover {
+  color: #1904E5;
+}
+.marketing-navbar .navbar-nav .nav-item .dropdown-menu .nav-item .dropdown-menu .nav-item .dropdown-menu .nav-item .dropdown-menu .nav-item.active .nav-link {
+  color: #1904E5;
+}
+.marketing-navbar .navbar-nav .nav-item .dropdown-menu .nav-item .dropdown-menu .nav-item .dropdown-menu .nav-item.active .nav-link {
+  color: #1904E5;
+}
+.marketing-navbar .navbar-nav .nav-item .dropdown-menu .nav-item .dropdown-menu .nav-item.active .nav-link {
+  color: #1904E5;
+}
+.marketing-navbar .navbar-nav .nav-item .dropdown-menu .nav-item.active .nav-link {
+  color: #1904E5;
+}
+.marketing-navbar .others-option {
+  margin-left: 25px;
+}
+.marketing-navbar .others-option .option-item .marketing-default-btn {
+  padding: 12px 20px;
+}
+.marketing-navbar .others-option .option-item:first-child .marketing-default-btn {
+  padding: 11px 20px;
+}
+
 /*================================================
 Responsive Sidebar Menu Area CSS
 =================================================*/
@@ -13400,6 +13544,55 @@ Responsive Sidebar Menu Area CSS
 .sidebar-menu-area .offcanvas-body::-webkit-scrollbar-thumb:hover {
   background: #000DFF;
   border-radius: 50px;
+}
+.sidebar-menu-area.marketing-sidebar .offcanvas-header .close-btn {
+  background-color: #1904E5;
+  color: #ffffff;
+}
+.sidebar-menu-area.marketing-sidebar .offcanvas-header .close-btn:hover {
+  background-color: #1904E5;
+}
+.sidebar-menu-area.marketing-sidebar .offcanvas-body .accordion .accordion-item {
+  color: #0F1012;
+}
+.sidebar-menu-area.marketing-sidebar .offcanvas-body .accordion .accordion-item .accordion-button {
+  color: #0F1012;
+}
+.sidebar-menu-area.marketing-sidebar .offcanvas-body .accordion .accordion-item .accordion-button::before {
+  color: #808183;
+}
+.sidebar-menu-area.marketing-sidebar .offcanvas-body .accordion .accordion-item .accordion-button:hover, .sidebar-menu-area.marketing-sidebar .offcanvas-body .accordion .accordion-item .accordion-button.active {
+  color: #1904E5;
+}
+.sidebar-menu-area.marketing-sidebar .offcanvas-body .accordion .accordion-item .accordion-button:hover::before, .sidebar-menu-area.marketing-sidebar .offcanvas-body .accordion .accordion-item .accordion-button.active::before {
+  color: #1904E5;
+}
+.sidebar-menu-area.marketing-sidebar .offcanvas-body .accordion .accordion-item .accordion-body .accordion-item {
+  color: #0F1012;
+}
+.sidebar-menu-area.marketing-sidebar .offcanvas-body .accordion .accordion-item .accordion-body .accordion-item .accordion-link {
+  color: #0F1012;
+}
+.sidebar-menu-area.marketing-sidebar .offcanvas-body .accordion .accordion-item .accordion-body .accordion-item .accordion-link:hover, .sidebar-menu-area.marketing-sidebar .offcanvas-body .accordion .accordion-item .accordion-body .accordion-item .accordion-link.active {
+  color: #1904E5;
+}
+.sidebar-menu-area.marketing-sidebar .offcanvas-body .others-option .option-item .marketing-default-btn {
+  padding: 12px 20px;
+}
+.sidebar-menu-area.marketing-sidebar .offcanvas-body .others-option .option-item:first-child .marketing-default-btn {
+  padding: 11px 20px;
+}
+.sidebar-menu-area.marketing-sidebar .offcanvas-body {
+  /* Handle */
+}
+.sidebar-menu-area.marketing-sidebar .offcanvas-body::-webkit-scrollbar-thumb {
+  background: #1904E5;
+}
+.sidebar-menu-area.marketing-sidebar .offcanvas-body {
+  /* Handle on hover */
+}
+.sidebar-menu-area.marketing-sidebar .offcanvas-body::-webkit-scrollbar-thumb:hover {
+  background: #1904E5;
 }
 
 /*================================================
@@ -14956,14 +15149,14 @@ Music Blog Details Area CSS
 }
 .music-blog-details-desc .desc-form .form-group .form-control {
   display: inline-block;
-  height: 57px;
+  height: 55px;
   background-color: #ffffff;
   color: #808183;
   outline: 0;
   box-shadow: unset;
   border: 1px solid #ffffff;
   border-radius: 10px;
-  padding: 15px 25px;
+  padding: 15px 20px;
   transition: 0.7s;
   font-size: 14px;
 }
@@ -15268,7 +15461,7 @@ Profile Authentication Area CSS
   box-shadow: unset;
   border: 1px solid #ffffff;
   border-radius: 7px;
-  padding: 15px 25px;
+  padding: 15px 20px;
   transition: 0.7s;
   font-size: 14px;
 }
@@ -15328,6 +15521,138 @@ Music Contact Area CSS
 .music-contact-top-title h3, .music-contact-top-title .h3 {
   margin-bottom: 0;
   font-size: 20px;
+}
+
+.music-contact-social {
+  margin-bottom: 0;
+  padding: 0 55px;
+}
+.music-contact-social li {
+  list-style-type: none;
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  margin-bottom: 15px;
+}
+.music-contact-social li h3, .music-contact-social li .h3 {
+  font-size: 20px;
+  margin-bottom: 0;
+}
+.music-contact-social li .icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 32px;
+  width: 32px;
+  line-height: 32px;
+  background-color: #EAEAEA;
+  border-radius: 5px;
+}
+.music-contact-social li .icon i {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
+  background: linear-gradient(135deg, #6B73FF 0%, #000DFF 100%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.music-contact-social li a {
+  font-weight: 500;
+  color: #0F1012;
+}
+.music-contact-social li a:hover {
+  color: #000DFF;
+}
+.music-contact-social li:first-child {
+  margin-bottom: 40px;
+}
+.music-contact-social li:last-child {
+  margin-bottom: 0;
+}
+
+.music-contact-form {
+  border-left: 1px solid #EAEAEA;
+  border-right: 1px solid #EAEAEA;
+  padding: 90px;
+}
+.music-contact-form .form-group {
+  margin-bottom: 25px;
+}
+.music-contact-form .form-group label {
+  display: block;
+  margin-bottom: 8px;
+  color: #0F1012;
+  font-size: 14px;
+  font-weight: 500;
+}
+.music-contact-form .form-group .form-control {
+  display: inline-block;
+  height: 50px;
+  background-color: #ffffff;
+  color: #808183;
+  outline: 0;
+  box-shadow: unset;
+  border: 1px solid #ffffff;
+  border-radius: 7px;
+  padding: 15px 20px;
+  transition: 0.7s;
+  font-size: 14px;
+}
+.music-contact-form .form-group .form-control::placeholder {
+  color: #808183;
+  transition: 0.7s;
+}
+.music-contact-form .form-group .form-control:focus {
+  border: 1px solid #000DFF;
+}
+.music-contact-form .form-group .form-control:focus::placeholder {
+  color: transparent;
+}
+.music-contact-form .form-group textarea.form-control {
+  min-height: 90px;
+}
+.music-contact-form .music-default-btn {
+  width: 100%;
+  border: none;
+}
+
+.music-contact-info {
+  margin-bottom: 0;
+  padding: 0 55px;
+}
+.music-contact-info li {
+  list-style-type: none;
+  margin-bottom: 30px;
+}
+.music-contact-info li h3, .music-contact-info li .h3 {
+  font-size: 20px;
+  margin-bottom: 0;
+}
+.music-contact-info li span {
+  font-weight: 500;
+  display: block;
+  font-size: 15px;
+  line-height: 1;
+  margin-bottom: 7px;
+}
+.music-contact-info li a {
+  color: #0F1012;
+  font-weight: 500;
+}
+.music-contact-info li a:hover {
+  color: #000DFF;
+}
+.music-contact-info li strong {
+  color: #0F1012;
+  font-weight: 500;
+}
+.music-contact-info li:first-child {
+  margin-bottom: 40px;
+}
+.music-contact-info li:last-child {
+  margin-bottom: 0;
 }
 
 /*================================================
@@ -15474,6 +15799,20 @@ Music Footer Area CSS
 }
 
 /* End Music & Media Demo CSS */
+/* Start Marketing & Advertising Demo CSS */
+/*================================================
+Marketing Banner Area CSS
+=================================================*/
+.marketing-banner-area {
+  background-color: #F7F5F2;
+  position: relative;
+  z-index: 1;
+  overflow: hidden;
+  padding-top: 155px;
+  padding-bottom: 155px;
+}
+
+/* End Marketing & Advertising Demo CSS */
 /*================================================
 Pagination CSS
 =================================================*/

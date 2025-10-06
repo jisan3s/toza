@@ -304,5 +304,11 @@
 /* Min width 1200px to Max width 1399px */
 /* Min width 1400px to Max width 1500px */
 /* Min width 1900px */
+@media only screen and (min-width: 1900px) {
+  .marketing-navbar .container-fluid {
+    padding-left: 120px;
+    padding-right: 120px;
+  }
+}
 
 /*# sourceMappingURL=responsive.css.map */

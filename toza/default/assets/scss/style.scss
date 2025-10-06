@@ -248,6 +248,73 @@ Default Btn Area CSS
         }
     }
 }
+.marketing-default-btn {
+    display: inline-flex;
+    gap: 5px;
+    align-items: center;
+    justify-content: center;
+    padding: 18px 28px;
+    background: $marketingGradientColor;
+    color: $whiteColor;
+    font-family: $heading-font-family;
+    font-size: $font-fifteen;
+    border-radius: 7px;
+    line-height: 1;
+    overflow: hidden;
+    position: relative;
+    z-index: 1;
+    transition: all 0.35s ease-in-out;
+
+    span {
+        transition: transform 0.35s ease;
+        position: relative;
+        z-index: 2;
+    }
+    i {
+        display: flex;
+        font-size: 13px;
+        position: relative;
+        right: -2px;
+        transition: transform 0.35s ease;
+        z-index: 2;
+    }
+    &::after {
+        position: absolute;
+        content: "";
+        inset: 0;
+        background: $marketingGradientColor;
+        opacity: 0;
+        transform: scale(0.9);
+        transition: all 0.35s ease-in-out;
+        z-index: -1;
+    }
+    &:hover {
+        color: $whiteColor;
+        transform: scale(1.05);
+        
+        span {
+            transform: translateX(4px);
+        }
+        i {
+            transform: translateX(3px) rotate(5deg);
+        }
+        &::after {
+            opacity: 1;
+            transform: scale(1);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.25);
+        }
+    }
+    &.border-wrap {
+        background: linear-gradient($whiteColor, $whiteColor) padding-box, linear-gradient(60deg, #FAB2FF, #1904E5) border-box;
+        border: 1px solid transparent;
+        color: $marketingColor;
+        padding: 17px 28px;
+
+        &:hover {
+            color: $whiteColor;
+        }
+    }
+}
 
 /*================================================
 Music Section Title CSS
@@ -331,6 +398,24 @@ Top Bar Area CSS
             top: 15px;
             bottom: 15px;
         };
+    }
+    &.marketing-bar {
+        border-bottom: 1px solid $borderColor2;
+
+        .top-bar-content {
+            span {
+                a {
+                    background: $marketingGradientColor;
+                    background-clip: text;
+                    -webkit-background-clip: text;
+                    -webkit-text-fill-color: transparent;
+
+                    &::before {
+                        background: $marketingGradientColor;
+                    }
+                }
+            }
+        }
     }
 }
 .top-bar-content {
@@ -671,6 +756,112 @@ Navbar Area CSS
         }
     }
 }
+.marketing-navbar {
+    padding: 10px 0;
+
+    .container-fluid {
+        padding: {
+            left: 20px;
+            right: 20px;
+        };
+    }
+    .navbar-nav {
+        margin: auto;
+
+        .nav-item {
+            .nav-link {
+                color: $blackColor;
+                font-weight: 500;
+
+                &:hover, &.active {
+                    color: $marketingColor;
+                }
+            }
+            &:hover, &.active {
+                color: $marketingColor;
+            }
+            .dropdown-menu {
+                .nav-item {
+                    .nav-link {
+                        color: $blackColor;
+                        font-weight: 400;
+
+                        &.active, &:hover {
+                            color: $marketingColor;
+                        }
+                    }
+                    .dropdown-menu {
+                        .nav-item {
+                            .nav-link {
+                                color: $blackColor;
+
+                                &.active, &:hover {
+                                    color: $marketingColor;
+                                }
+                            }
+                            .dropdown-menu {
+                                .nav-item {
+                                    .nav-link {
+                                        color: $blackColor;
+        
+                                        &.active, &:hover {
+                                            color: $marketingColor;
+                                        }
+                                    }
+                                    .dropdown-menu {
+                                        .nav-item {
+                                            .nav-link {
+                                                color: $blackColor;
+                
+                                                &.active, &:hover {
+                                                    color: $marketingColor;
+                                                }
+                                            }
+                                            &.active {
+                                                .nav-link {
+                                                    color: $marketingColor;
+                                                }
+                                            }
+                                        }
+                                    }
+                                    &.active {
+                                        .nav-link {
+                                            color: $marketingColor;
+                                        }
+                                    }
+                                }
+                            }
+                            &.active {
+                                .nav-link {
+                                    color: $marketingColor;
+                                }
+                            }
+                        }
+                    }
+                    &.active {
+                        .nav-link {
+                            color: $marketingColor;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    .others-option {
+        margin-left: 25px;
+
+        .option-item {
+            .marketing-default-btn {
+                padding: 12px 20px;
+            }
+            &:first-child {
+                .marketing-default-btn {
+                    padding: 11px 20px;
+                }
+            }
+        }
+    }
+}
 
 /*================================================
 Responsive Sidebar Menu Area CSS
@@ -856,6 +1047,73 @@ Responsive Sidebar Menu Area CSS
         &::-webkit-scrollbar-thumb:hover {  
             background: $primary;
             border-radius: 50px;
+        }
+    }
+    &.marketing-sidebar {
+        .offcanvas-header {
+            .close-btn {
+                background-color: $marketingColor;
+                color: $whiteColor;
+
+                &:hover {
+                    background-color: $marketingColor;
+                }
+            }
+        }
+        .offcanvas-body {
+            .accordion {
+                .accordion-item {
+                    color: $blackColor;
+
+                    .accordion-button {
+                        color: $blackColor;
+                        
+                        &::before {
+                            color: $bodyTextColor;
+                        }
+                        &:hover, &.active {
+                            color: $marketingColor;
+                            
+                            &::before {
+                                color: $marketingColor;
+                            }
+                        }
+                    }
+                    .accordion-body {
+                        .accordion-item {
+                            color: $blackColor;
+
+                            .accordion-link {
+                                color: $blackColor;
+
+                                &:hover, &.active {
+                                    color: $marketingColor;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+            .others-option {
+                .option-item {
+                    .marketing-default-btn {
+                        padding: 12px 20px;
+                    }
+                    &:first-child {
+                        .marketing-default-btn {
+                            padding: 11px 20px;
+                        }
+                    }
+                }
+            }
+            /* Handle */
+            &::-webkit-scrollbar-thumb {
+                background: $marketingColor;
+            }
+            /* Handle on hover */
+            &::-webkit-scrollbar-thumb:hover {  
+                background: $marketingColor;
+            }
         }
     }
 }
@@ -2658,14 +2916,14 @@ Music Blog Details Area CSS
             }
             .form-control {
                 display: inline-block;
-                height: 57px;
+                height: 55px;
                 background-color: $whiteColor;
                 color: $bodyTextColor;
                 outline: 0;
                 box-shadow: unset;
                 border: 1px solid $whiteColor;
                 border-radius: 10px;
-                padding: 15px 25px;
+                padding: 15px 20px;
                 transition: $transition;
                 font-size: $font-fourteen;
 
@@ -3023,7 +3281,7 @@ Profile Authentication Area CSS
             box-shadow: unset;
             border: 1px solid $whiteColor;
             border-radius: 7px;
-            padding: 15px 25px;
+            padding: 15px 20px;
             transition: $transition;
             font-size: $font-fourteen;
 
@@ -3095,11 +3353,146 @@ Music Contact Area CSS
         font-size: 20px;
     }
 }
+.music-contact-social {
+    margin-bottom: 0;
+    padding: 0 55px;
 
+    li {
+        list-style-type: none;
+        display: flex;
+        gap: 10px;
+        align-items: center;
+        margin-bottom: 15px;
 
+        h3 {
+            font-size: 20px;
+            margin-bottom: 0;
+        }
+        .icon {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 32px;
+            width: 32px;
+            line-height: 32px;
+            background-color: $borderColor;
+            border-radius: 5px;
 
+            i {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                font-size: 18px;
+                background: $musicGradientColor;
+                background-clip: text;
+                -webkit-background-clip: text;
+                -webkit-text-fill-color: transparent;
+            }
+        }
+        a {
+            font-weight: 500;
+            color: $blackColor;
 
+            &:hover {
+                color: $primary;
+            }
+        }
+        &:first-child {
+            margin-bottom: 40px;
+        }
+        &:last-child {
+            margin-bottom: 0;
+        }
+    }
+}
+.music-contact-form {
+    border-left: 1px solid $borderColor;
+    border-right: 1px solid $borderColor;
+    padding: 90px;
 
+    .form-group {
+        margin-bottom: 25px;
+
+        label {
+            display: block;
+            margin-bottom: 8px;
+            color: $blackColor;
+            font-size: $font-fourteen;
+            font-weight: 500;
+        }
+        .form-control {
+            display: inline-block;
+            height: 50px;
+            background-color: $whiteColor;
+            color: $bodyTextColor;
+            outline: 0;
+            box-shadow: unset;
+            border: 1px solid $whiteColor;
+            border-radius: 7px;
+            padding: 15px 20px;
+            transition: $transition;
+            font-size: $font-fourteen;
+
+            &::placeholder {
+                color: $bodyTextColor;
+                transition: $transition;
+            }
+            &:focus {
+                border: 1px solid $primary;
+
+                &::placeholder {
+                    color: transparent;
+                }
+            }
+        }
+        textarea.form-control {
+            min-height: 90px;
+        }
+    }
+    .music-default-btn {
+        width: 100%;
+        border: none;
+    }
+}
+.music-contact-info {
+    margin-bottom: 0;
+    padding: 0 55px;
+
+    li {
+        list-style-type: none;
+        margin-bottom: 30px;
+
+        h3 {
+            font-size: 20px;
+            margin-bottom: 0;
+        }
+        span {
+            font-weight: 500;
+            display: block;
+            font-size: $font-fifteen;
+            line-height: 1;
+            margin-bottom: 7px;
+        }
+        a {
+            color: $blackColor;
+            font-weight: 500;
+
+            &:hover {
+                color: $primary;
+            }
+        }
+        strong {
+            color: $blackColor;
+            font-weight: 500;
+        }
+        &:first-child {
+            margin-bottom: 40px;
+        }
+        &:last-child {
+            margin-bottom: 0;
+        }
+    }
+}
 
 /*================================================
 Music Footer Area CSS
@@ -3266,8 +3659,29 @@ Music Footer Area CSS
         bottom: 50px;
     };
 }
-
 /* End Music & Media Demo CSS */
+
+/* Start Marketing & Advertising Demo CSS */
+
+/*================================================
+Marketing Banner Area CSS
+=================================================*/
+.marketing-banner-area {
+    background-color: $whiteSmokeColor;
+    position: relative;
+    z-index: 1;
+    overflow: hidden;
+    padding: {
+        top: 155px;
+        bottom: 155px;
+    };
+}
+.marketing-banner-content {
+    
+}
+
+/* End Marketing & Advertising Demo CSS */
+
 
 
 
