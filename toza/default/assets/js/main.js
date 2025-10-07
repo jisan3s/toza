@@ -104,6 +104,98 @@
             },
         }
     });
+
+    // Marketing Partner Slider JS
+	var SwiperTraveler = new Swiper(".marketing-partner-slider", {
+        loop: true,
+        spaceBetween: 25,
+        autoHeight: true,
+        autoplay: {
+            delay: 3500,
+            disableOnInteraction: false,
+        },
+        breakpoints: {
+            0: {
+                slidesPerView: 2
+            },
+            576: {
+                slidesPerView: 3
+            },
+            768: {
+                slidesPerView: 4
+            },
+            992: {
+                slidesPerView: 5
+            },
+            1200: {
+                slidesPerView: 6
+            },
+        }
+    });
+
+    // Marketing Showcase Slider JS
+	var SwiperTraveler = new Swiper(".marketing-showcase-slider", {
+        loop: true,
+        spaceBetween: 25,
+        autoHeight: true,
+        autoplay: {
+            delay: 3500,
+            disableOnInteraction: false,
+        },
+        navigation: {
+            prevEl: ".showcase-prev",
+            nextEl: ".showcase-next",
+        },
+        breakpoints: {
+            0: {
+                slidesPerView: 1
+            },
+            576: {
+                slidesPerView: 2
+            },
+            768: {
+                slidesPerView: 2
+            },
+            992: {
+                slidesPerView: 3
+            },
+            1200: {
+                slidesPerView: 3
+            },
+        }
+    });
+
+    // Marketing Testimonials Slider JS
+	var SwiperTraveler = new Swiper(".marketing-testimonials-slider", {
+        loop: true,
+        spaceBetween: 25,
+        autoHeight: true,
+        autoplay: {
+            delay: 3500,
+            disableOnInteraction: false,
+        },
+        navigation: {
+            prevEl: ".testimonials-prev",
+            nextEl: ".testimonials-next",
+        },
+        breakpoints: {
+            0: {
+                slidesPerView: 1
+            },
+            576: {
+                slidesPerView: 2
+            },
+            768: {
+                slidesPerView: 2
+            },
+            992: {
+                slidesPerView: 2
+            },
+            1200: {
+                slidesPerView: 3
+            },
+        }
+    });
     
 
 
@@ -121,9 +213,32 @@ window.addEventListener('scroll', event => {
     document.querySelector('#navbar').classList.toggle('sticky', scrollTop >= height);
 });
 
-// Pricing JS
+// Music Pricing JS
 document.addEventListener("DOMContentLoaded", function () {
     const toggleItems = document.querySelectorAll('.music-pricing-toggle-billing li');
+    const priceElements = document.querySelectorAll('.price');
+    toggleItems.forEach(item => {
+        item.addEventListener('click', () => {
+            toggleItems.forEach(el => el.classList.remove('active'));
+            item.classList.add('active');
+            const billingType = item.getAttribute('data-billing');
+            priceElements.forEach(priceEl => {
+                const monthly = priceEl.getAttribute('data-monthly');
+                const yearly = priceEl.getAttribute('data-yearly');
+                if (billingType === 'monthly') {
+                    priceEl.innerHTML = `$${monthly} <span>/month</span>`;
+                } 
+                else {
+                    priceEl.innerHTML = `$${yearly} <span>/year</span>`;
+                }
+            });
+        });
+    });
+});
+
+// Marketing Pricing JS
+document.addEventListener("DOMContentLoaded", function () {
+    const toggleItems = document.querySelectorAll('.marketing-pricing-toggle-billing li');
     const priceElements = document.querySelectorAll('.price');
     toggleItems.forEach(item => {
         item.addEventListener('click', () => {

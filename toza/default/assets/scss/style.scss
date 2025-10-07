@@ -307,7 +307,7 @@ Default Btn Area CSS
     &.border-wrap {
         background: linear-gradient($whiteColor, $whiteColor) padding-box, linear-gradient(60deg, #FAB2FF, #1904E5) border-box;
         border: 1px solid transparent;
-        color: $marketingColor;
+        color: $blackColor;
         padding: 17px 28px;
 
         &:hover {
@@ -349,6 +349,33 @@ Music Section Title CSS
             color: $primary;
             font-style: italic;
         }
+    }
+}
+.marketing-section-title {
+    margin-bottom: 50px;
+
+    .sub {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        background-color: $borderColor2;
+        padding: 10px 20px;
+        border-radius: 50px;
+        line-height: 1;
+        font-family: $heading-font-family;
+        margin-bottom: 18px;
+
+        span {
+            background: $marketingGradientColor;
+            background-clip: text;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+    }
+    h2 {
+        font-size: 40px;
+        margin-bottom: 0;
+        line-height: 1.3;
     }
 }
 
@@ -759,6 +786,9 @@ Navbar Area CSS
 .marketing-navbar {
     padding: 10px 0;
 
+    &.sticky {
+        background-color: $whiteColor;
+    }
     .container-fluid {
         padding: {
             left: 20px;
@@ -3667,7 +3697,6 @@ Music Footer Area CSS
 Marketing Banner Area CSS
 =================================================*/
 .marketing-banner-area {
-    background-color: $whiteSmokeColor;
     position: relative;
     z-index: 1;
     overflow: hidden;
@@ -3677,7 +3706,1018 @@ Marketing Banner Area CSS
     };
 }
 .marketing-banner-content {
-    
+    max-width: 857px;
+    margin: auto;
+    text-align: center;
+
+    .sub {
+        display: inline-flex;
+        gap: 12px;
+        align-items: center;
+        justify-content: center;
+        padding: 7px 17px;
+        background: linear-gradient($whiteColor, $whiteColor) padding-box, linear-gradient(60deg, #FAB2FF, #1904E5) border-box;
+        border: 1px solid transparent;
+        border-radius: 50px;
+        margin-bottom: 20px;
+
+        i {
+            display: flex;
+            font-size: $font-seventeen;
+            background: $marketingGradientColor;
+            background-clip: text;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        span {
+            font-size: $font-fourteen;
+        }
+    }
+    h1 {
+        font-size: 72px;
+        margin-bottom: 15px;
+
+        span {
+            background: $marketingGradientColor;
+            background-clip: text;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+    }
+    p {
+        font-size: $font-sixteen;
+        max-width: 760px;
+        margin: auto;
+    }
+    .banner-btn-list {
+        display: flex;
+        gap: 20px;
+        justify-content: center;
+        align-items: center;
+        margin: {
+            top: 45px;
+            bottom: 0;
+        };
+        padding: {
+            left: 0;
+            right: 0;
+        };
+        li {
+            list-style-type: none;
+        }
+    }
+    .banner-info {
+        display: flex;
+        gap: 15px;
+        align-items: center;
+        justify-content: center;
+        margin-top: 70px;
+
+        .user-list {
+            display: flex;
+            margin-bottom: 0;
+            padding: {
+                left: 0;
+                right: 0;
+            };
+            li {
+                list-style-type: none;
+                margin-right: -20px;
+
+                img {
+                    max-width: 55px;
+                    border: 2px solid $whiteColor;
+                    border-radius: 55px;
+                }
+                &:last-child {
+                    margin-right: 0;
+                }
+            }
+        }
+        span {
+            font-size: $font-fifteen;
+            max-width: 225px;
+            text-align: start;
+
+            strong {
+                font-weight: 600;
+            }
+        }
+    }
+}
+.marketing-banner-shape1 {
+    position: absolute;
+    left: 50px;
+    bottom: -1px;
+    z-index: -1;
+}
+.marketing-banner-shape2 {
+    position: absolute;
+    right: 30px;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: -1;
+}
+
+/*================================================
+Marketing Partner Area CSS
+=================================================*/
+.marketing-partner-title {
+    text-align: center;
+    margin-bottom: 50px;
+
+    span {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        background-color: $borderColor2;
+        padding: 10px 20px;
+        font-size: $font-eighteen;
+        border-radius: 5px;
+        line-height: 1;
+        font-family: $heading-font-family;
+    }
+}
+.marketing-partner-item {
+    text-align: center;
+}
+
+/*================================================
+Marketing Features Area CSS
+=================================================*/
+.marketing-features-area {
+    .marketing-section-title {
+        margin-bottom: 0;
+        position: sticky;
+        top: 130px;
+    }
+}
+.marketing-features-items {
+    .item {
+        background-color: $whiteSmokeColor;
+        padding: 50px 45px;
+        border-radius: 15px;
+        margin-bottom: 25px;
+        position: relative;
+        z-index: 1;
+        overflow: hidden;
+        transition: $transition;
+
+        .icon {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 82px;
+            width: 82px;
+            line-height: 82px;
+            background-color: $whiteColor;
+            border-radius: 10px;
+            margin-bottom: 40px;
+
+            i {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                font-size: 40px;
+                background: $marketingGradientColor;
+                background-clip: text;
+                -webkit-background-clip: text;
+                -webkit-text-fill-color: transparent;
+            }
+        }
+        h3 {
+            font-size: 24px;
+            margin-bottom: 15px;
+        }
+        p {
+            margin-bottom: 0;
+        }
+        &:before {
+            content: "";
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(51, 106, 234, 0.25) 0%, transparent 95%);
+            transform: scale(0);
+            transition: transform 0.5s ease;
+            border-radius: 50%;
+            z-index: -1;
+        }
+        &:last-child {
+            margin-bottom: 0;
+        }
+        &:hover {
+            &:before {
+                transform: scale(1);
+            }
+        }
+    }
+}
+
+/*================================================
+Marketing Works Area CSS
+=================================================*/
+.marketing-works-card {
+    border-top: 1px solid #D9D9D9;
+    position: relative;
+    padding: {
+        top: 40px;
+        right: 40px;
+    };
+    &::before {
+        position: absolute;
+        content: "";
+        left: 0;
+        top: -1px;
+        width: 110px;
+        height: 1px;
+        background: $marketingGradientColor;
+    }
+    .icon {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        height: 70px;
+        width: 70px;
+        background-color: $whiteColor;
+        border-radius: 10px;
+        margin-bottom: 30px;
+
+        i {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 40px;
+            background: $musicGradientColor;
+            background-clip: text;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+    }
+    h3 {
+        font-size: 24px;
+        margin-bottom: 15px;
+    }
+    p {
+        margin-bottom: 0;
+    }
+    .number {
+        font-size: 48px;
+        font-style: italic;
+        font-weight: 400;
+        font-family: $heading-font-family;
+        line-height: 1;
+        color: rgba(128, 129, 131, 0.45);
+        position: absolute;
+        right: 40px;
+        top: 40px;
+    }
+    &.wrap2 {
+        &::before {
+            width: 275px;
+        }
+    }
+    &.wrap3 {
+        &::before {
+            width: 100%;
+        }
+    }
+}
+
+/*================================================
+Marketing Showcase Area CSS
+=================================================*/
+.marketing-showcase-button {
+    display: flex;
+    gap: 15px;
+    align-items: center;
+    justify-content: end;
+    margin-bottom: 0;
+    padding: {
+        left: 0;
+        right: 0;
+    };
+    li {
+        list-style-type: none;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 50px;
+        width: 50px;
+        background-color: $whiteColor;
+        border-radius: 50px;
+        transition: $transition;
+
+        i {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 30px;
+            background: $marketingGradientColor;
+            background-clip: text;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        &:hover {
+            background-color: $blackColor;
+        }
+    }
+}
+.marketing-showcase-item {
+    padding: 18px;
+    background-color: $whiteColor;
+    border-radius: 15px;
+
+    img {
+        border-radius: 10px;
+    }
+}
+
+/*================================================
+Marketing Collaborate Area CSS
+=================================================*/
+.marketing-collaborate-card {
+    position: relative;
+    padding-left: 25px;
+
+    h3 {
+        background: $marketingGradientColor;
+        background-clip: text;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        font-size: 40px;
+        margin-bottom: 13.5px;
+        line-height: 1;
+    }
+    p {
+        margin-bottom: 0;
+        font-size: $font-sixteen;
+    }
+    &::before {
+        position: absolute;
+        content: "";
+        left: 0;
+        top: 0;
+        width: 1px;
+        height: 100%;
+        background: $marketingGradientColor;
+    }
+}
+
+/*================================================
+Marketing Benefits Area CSS
+=================================================*/
+.marketing-benefits-inner {
+    background-color: $whiteColor;
+    padding: 140px 110px;
+    border-radius: 15px;
+}
+.marketing-benefits-image {
+    margin-right: 50px;
+}
+.marketing-benefits-items {
+    .item {
+        display: flex;
+        gap: 30px;
+        align-items: start;
+        border-bottom: 1px solid $borderColor;
+        margin-bottom: 25px;
+        padding-bottom: 25px;
+
+        .icon {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 57px;
+            width: 57px;
+            background-color: $borderColor2;
+            border-radius: 7px;
+
+            i {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                font-size: 30px;
+                background: $musicGradientColor;
+                background-clip: text;
+                -webkit-background-clip: text;
+                -webkit-text-fill-color: transparent;
+            }
+        }
+        .content {
+            max-width: 425px;
+            
+            h3 {
+                font-size: 24px;
+                margin-bottom: 15px;
+            }
+            p {
+                margin-bottom: 0;
+            }
+        }
+        &:last-child {
+            border-bottom: none;
+            margin-bottom: 0;
+            padding-bottom: 0;
+        }
+    }
+}
+.marketing-benefits-btn-list {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    align-items: center;
+    margin: {
+        top: 65px;
+        bottom: 0;
+    };
+    padding: {
+        left: 0;
+        right: 0;
+    };
+    li {
+        list-style-type: none;
+    }
+}
+
+/*================================================
+Marketing Fun Area CSS
+=================================================*/
+.marketing-fun-items {
+    display: flex;
+    gap: 30px;
+    align-items: center;
+    justify-content: space-between;
+
+    .item {
+        text-align: center;
+        position: relative;
+
+        h3 {
+            background: $musicGradientColor;
+            background-clip: text;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            font-size: 48px;
+            font-weight: 400;
+            line-height: 1;
+            margin-bottom: 0;
+        }
+        span {
+            display: block;
+            margin-top: 8px;
+        }
+        &::before {
+            position: absolute;
+            content: "";
+            right: -135px;
+            top: 50%;
+            transform: translateY(-50%) rotate(25deg);
+            width: 1px;
+            height: 100%;
+            background: #D9D9D9;
+        }
+        &:last-child {
+            &::before {
+                display: none;
+            }
+        }
+    }
+}
+
+/*================================================
+Marketing Pricing Area CSS
+=================================================*/
+.marketing-pricing-list {
+    text-align: center; 
+    margin-bottom: 40px;
+
+    .marketing-pricing-toggle-billing {
+        display: inline-flex;
+        gap: 20px;
+        justify-content: center;
+        background-color: $borderColor;
+        padding: 5px;
+        border-radius: 100px;
+        text-align: center;
+        margin-bottom: 0;
+
+        li {
+            list-style-type: none;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 10px 15px;
+            background-color: transparent;
+            color: $blackColor;
+            font-size: $font-fifteen;
+            border-radius: 100px;
+            line-height: 1;
+            transition: $transition;
+            cursor: pointer;
+
+            &:hover, &.active {
+                background-color: $whiteColor;
+            }
+        }
+    }
+    span {
+        display: block;
+        margin-top: 12px;
+        font-size: $font-fifteen;
+
+        strong {
+            background: $marketingGradientColor;
+            background-clip: text;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            font-weight: 600;
+        }
+    }
+}
+.marketing-pricing-card {
+    background-color: $whiteColor;
+    padding: 60px 50px;
+    border-radius: 15px;
+
+    .head {
+        margin-bottom: 25px;
+        
+        h3 {
+            font-size: 24px;
+            margin-bottom: 0;
+        }
+    }
+    .price {
+        font-size: 37px;
+        font-family: $heading-font-family;
+        background: $marketingGradientColor;
+        background-clip: text;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        line-height: 1;
+        margin-bottom: 20px;
+
+        span {
+            font-size: 20px;
+            font-weight: 400;
+            background: $blackColor;
+            background-clip: text;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            position: relative;
+            top: -2px;
+        }
+    }
+    p {
+        margin-bottom: 30px;
+    }
+    .price-btn {
+        margin-bottom: 30px;
+    }
+    .features {
+        margin-bottom: 0;
+        padding: {
+            left: 0;
+            right: 0;
+        };
+        li {
+            display: flex;
+            gap: 13px;
+            align-items: center;
+            list-style-type: none;
+            color: $blackColor;
+            margin-bottom: 20px;
+
+            i {
+                display: flex;
+                font-size: 20px;
+            }
+            span {
+                font-size: $font-fifteen;
+            }
+            &.gray {
+                color: $bodyTextColor;
+                opacity: .70;
+            }
+            &:last-child {
+                margin-bottom: 0;
+            }
+        }
+    }
+}
+
+/*================================================
+Marketing Testimonials Area CSS
+=================================================*/
+.marketing-testimonials-button {
+    display: flex;
+    gap: 15px;
+    align-items: center;
+    justify-content: end;
+    margin-bottom: 0;
+    padding: {
+        left: 0;
+        right: 0;
+    };
+    li {
+        list-style-type: none;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 50px;
+        width: 50px;
+        background-color: $whiteColor;
+        border-radius: 50px;
+        transition: $transition;
+
+        i {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 30px;
+            background: $marketingGradientColor;
+            background-clip: text;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        &:hover {
+            background-color: $blackColor;
+        }
+    }
+}
+.marketing-testimonials-item {
+    background-color: $whiteColor;
+    overflow: hidden;
+    border-radius: 15px;
+
+    .image {
+        img {
+            border-radius: 15px 0 0 15px;
+        }
+    }
+    .content {
+        padding: 30px 25px 30px 0;
+
+        .quote {
+            margin-bottom: 30px;
+        }
+        p {
+            margin-bottom: 0;
+            font-size: 20px;
+            color: $blackColor;
+        }
+        .info {
+            margin-top: 30px;
+
+            h3 {
+                font-size: $font-eighteen;
+                margin-bottom: 0;
+            }
+            span {
+                font-size: $font-fourteen;
+                display: block;
+                line-height: 1;
+                margin-top: 10px;
+            }
+        }
+    }
+}
+
+/*================================================
+Marketing FAQ Area CSS
+=================================================*/
+.marketing-faq-accordion {
+    max-width: 740px;
+    margin: auto;
+
+    .accordion {
+        .accordion-item {
+            border: none;
+            background-color: $whiteColor;
+            border-radius: 7px;
+            padding: 25px;
+            margin-bottom: 20px;
+
+            .accordion-button {
+                border: none;
+                box-shadow: unset;
+                position: relative;
+                padding: 0 40px 0 0;
+                background-color: transparent;
+                color: $blackColor;
+                font-size: 20px;
+                font-weight: 500;
+                border-radius: 5px 5px 0 0;
+                transition: $transition;
+                line-height: 1;
+                font-family: $heading-font-family;
+
+                &::before {
+                    position: absolute;
+                    content: "\f12a";
+                    top: 0;
+                    right: -5px;
+                    font-family: flaticon_toza !important;
+                    font-size: 20px;
+                    color: $blackColor;
+                    font-weight: 400;
+                    transition: $transition;
+                }
+                &::after {
+                    display: none;
+                }
+                &:not(.collapsed) {
+                    &::before {
+                        transform: rotate(90deg);
+                        right: 0;
+                    }
+                }
+                &.collapsed {
+                    background-color: transparent;
+                }
+            }
+            .accordion-body {
+                border-top: 1px solid $borderColor;
+                padding: 15px 0 0 0;
+                margin-top: 20px;
+
+                p {
+                    a {
+                        color: $primary;
+
+                        &:hover {
+                            color: $primary;
+                        }
+                    }
+                }
+            }
+            &:last-child {
+                margin-bottom: 0;
+            }
+        }
+    }
+}
+
+/*================================================
+Marketing CTA Area CSS
+=================================================*/
+.marketing-cta-inner {
+    background-color: $whiteColor;
+    padding: 90px 85px;
+    border-radius: 15px;
+}
+.marketing-cta-image {
+    margin-right: 50px;
+}
+.marketing-cta-content {
+    h2 {
+        font-size: 40px;
+        margin-bottom: 15px;
+    }
+    p {
+        margin-bottom: 0;
+    }
+    .cta-btn {
+        margin-top: 50px;
+    }
+}
+
+/*================================================
+Marketing Footer Area CSS
+=================================================*/
+.marketing-footer-widget {
+    .widget-logo {
+        margin-bottom: 20px;
+    }
+    p {
+        margin-bottom: 0;
+    }
+    .social-list {
+        display: flex;
+        gap: 10px;
+        align-items: center;
+        line-height: 1;
+        margin: {
+            top: 25px;
+            bottom: 0;
+        };
+        padding: {
+            left: 0;
+            right: 0;
+        };
+        li {
+            list-style-type: none;
+
+            a {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                height: 32px;
+                width: 32px;
+                background-color: $borderColor;
+                border-radius: 5px;
+                transition: $transition;
+
+                i {
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    font-size: 18px;
+                    background: $marketingGradientColor;
+                    background-clip: text;
+                    -webkit-background-clip: text;
+                    -webkit-text-fill-color: transparent;
+                }
+                &:hover {
+                    background-color: $whiteColor;
+                }
+            }
+        }
+    }
+    h3 {
+        font-size: 20px;
+        margin-bottom: 20px;
+    }
+    .list {
+        margin-bottom: 0;
+        padding: {
+            left: 0;
+            right: 0;
+        };
+        li {
+            list-style-type: none;
+            font-size: $font-fifteen;
+            margin-bottom: 15px;
+
+            a {
+                color: $bodyTextColor;
+                position: relative;
+                padding-left: 18px;
+
+                &::before {
+                    position: absolute;
+                    content: "";
+                    left: 0;
+                    top: 50%;
+                    transform: translateY(-50%);
+                    height: 8px;
+                    width: 8px;
+                    background: $marketingGradientColor;
+                    border-radius: 50px;
+                    transition: $transition;
+                }
+            }
+            &:last-child {
+                margin-bottom: 0;
+            }
+        }
+    }
+    &.with-max-width {
+        max-width: 200px;
+    }
+    .subscribe-form {
+        overflow: hidden;
+        position: relative;
+        margin-top: 25px;
+
+        .form-control {
+            display: inline-block;
+            height: 55px;
+            background-color: $whiteColor;
+            color: $bodyTextColor;
+            outline: 0;
+            box-shadow: unset;
+            border: 1px solid $whiteColor;
+            border-radius: 7px;
+            padding: 15px 20px;
+            transition: $transition;
+            font-size: $font-fourteen;
+
+            &::placeholder {
+                color: $bodyTextColor;
+                transition: $transition;
+            }
+            &:focus {
+                border: 1px solid $primary;
+
+                &::placeholder {
+                    color: transparent;
+                }
+            }
+        }
+        .marketing-default-btn {
+            border: none;
+            position: absolute;
+            right: 5px;
+            top: 5px;
+            padding: 15px 20px;
+
+            span {
+                transform: unset;
+            }
+            i {
+                transform: unset;
+            }
+            &:after {
+                background: $blackColor;
+            }
+            &:hover {
+                transform: unset;
+            }
+        }
+    }
+}
+
+/*================================================
+Marketing Copyright Area CSS
+=================================================*/
+.marketing-copyright-area {
+    .inner {
+        border-top: 1px solid $borderColor;
+        padding: {
+            top: 30px;
+            bottom: 30px;
+        };
+    }
+    p {
+        font-size: $font-fourteen;
+
+        span {
+            background: $musicGradientColor;
+            background-clip: text;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        a {
+            background: $musicGradientColor;
+            background-clip: text;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            position: relative;
+
+            &::before {
+                position: absolute;
+                content: "";
+                left: 0;
+                bottom: 0;
+                width: 0%;
+                height: 1px;
+                background: $musicGradientColor;
+                transition: $transition;
+            }
+            &:hover {
+                font-weight: 500;
+
+                &::before {
+                    width: 100%;
+                }
+            }
+        }
+    }
+    .list {
+        display: flex;
+        align-items: center;
+        justify-content: end;
+        margin-bottom: 0;
+        padding: {
+            left: 0;
+            right: 0;
+        };
+        li {
+            list-style-type: none;
+            font-size: $font-fourteen;
+            position: relative;
+            margin-right: 40px;
+
+            &::before {
+                position: absolute;
+                content: "";
+                right: -25px;
+                top: 50%;
+                transform: translateY(-50%);
+                width: 10px;
+                height: 1px;
+                background-color: $bodyTextColor;
+            }
+            a {
+                color: $bodyTextColor;
+
+                &:hover {
+                    color: $primary;
+                }
+            }
+            &:last-child {
+                margin-right: 0;
+
+                &::before {
+                    display: none;
+                }
+            }
+        }
+    }
 }
 
 /* End Marketing & Advertising Demo CSS */

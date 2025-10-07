@@ -309,6 +309,12 @@
     padding-left: 120px;
     padding-right: 120px;
   }
+  .marketing-banner-shape1 {
+    left: 120px;
+  }
+  .marketing-banner-shape2 {
+    right: 120px;
+  }
 }
 
 /*# sourceMappingURL=responsive.css.map */
