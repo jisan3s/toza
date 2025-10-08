@@ -12940,6 +12940,71 @@ Default Btn Area CSS
   color: #ffffff;
 }
 
+.customer-default-btn {
+  display: inline-flex;
+  gap: 5px;
+  align-items: center;
+  justify-content: center;
+  padding: 18px 28px;
+  background: linear-gradient(135deg, #FDD819 0%, #E80505 100%);
+  color: #ffffff;
+  font-family: "Instrument Sans", sans-serif;
+  font-size: 15px;
+  border-radius: 7px;
+  line-height: 1;
+  overflow: hidden;
+  position: relative;
+  z-index: 1;
+  transition: all 0.35s ease-in-out;
+}
+.customer-default-btn span {
+  transition: transform 0.35s ease;
+  position: relative;
+  z-index: 2;
+}
+.customer-default-btn i {
+  display: flex;
+  font-size: 13px;
+  position: relative;
+  right: -2px;
+  transition: transform 0.35s ease;
+  z-index: 2;
+}
+.customer-default-btn::after {
+  position: absolute;
+  content: "";
+  inset: 0;
+  background: linear-gradient(135deg, #FDD819 0%, #E80505 100%);
+  opacity: 0;
+  transform: scale(0.9);
+  transition: all 0.35s ease-in-out;
+  z-index: -1;
+}
+.customer-default-btn:hover {
+  color: #ffffff;
+  transform: scale(1.05);
+}
+.customer-default-btn:hover span {
+  transform: translateX(4px);
+}
+.customer-default-btn:hover i {
+  transform: translateX(3px) rotate(5deg);
+}
+.customer-default-btn:hover::after {
+  opacity: 1;
+  transform: scale(1);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
+}
+.customer-default-btn.border-wrap {
+  background: linear-gradient(#ffffff, #ffffff) padding-box, linear-gradient(60deg, #FDD819, #E80505) border-box;
+  border: 1px solid transparent;
+  color: #0F1012;
+  padding: 17px 28px;
+}
+.customer-default-btn.border-wrap:hover {
+  color: #ffffff;
+}
+
 /*================================================
 Music Section Title CSS
 =================================================*/
@@ -13400,6 +13465,72 @@ Navbar Area CSS
   padding: 12px 20px;
 }
 .marketing-navbar .others-option .option-item:first-child .marketing-default-btn {
+  padding: 11px 20px;
+}
+
+.customer-navbar {
+  padding: 10px 0;
+}
+.customer-navbar.sticky {
+  background-color: #ffffff;
+}
+.customer-navbar .navbar-nav {
+  margin: auto;
+}
+.customer-navbar .navbar-nav .nav-item .nav-link {
+  color: #0F1012;
+  font-weight: 500;
+}
+.customer-navbar .navbar-nav .nav-item .nav-link:hover, .customer-navbar .navbar-nav .nav-item .nav-link.active {
+  color: #1904E5;
+}
+.customer-navbar .navbar-nav .nav-item:hover, .customer-navbar .navbar-nav .nav-item.active {
+  color: #1904E5;
+}
+.customer-navbar .navbar-nav .nav-item .dropdown-menu .nav-item .nav-link {
+  color: #0F1012;
+  font-weight: 400;
+}
+.customer-navbar .navbar-nav .nav-item .dropdown-menu .nav-item .nav-link.active, .customer-navbar .navbar-nav .nav-item .dropdown-menu .nav-item .nav-link:hover {
+  color: #1904E5;
+}
+.customer-navbar .navbar-nav .nav-item .dropdown-menu .nav-item .dropdown-menu .nav-item .nav-link {
+  color: #0F1012;
+}
+.customer-navbar .navbar-nav .nav-item .dropdown-menu .nav-item .dropdown-menu .nav-item .nav-link.active, .customer-navbar .navbar-nav .nav-item .dropdown-menu .nav-item .dropdown-menu .nav-item .nav-link:hover {
+  color: #1904E5;
+}
+.customer-navbar .navbar-nav .nav-item .dropdown-menu .nav-item .dropdown-menu .nav-item .dropdown-menu .nav-item .nav-link {
+  color: #0F1012;
+}
+.customer-navbar .navbar-nav .nav-item .dropdown-menu .nav-item .dropdown-menu .nav-item .dropdown-menu .nav-item .nav-link.active, .customer-navbar .navbar-nav .nav-item .dropdown-menu .nav-item .dropdown-menu .nav-item .dropdown-menu .nav-item .nav-link:hover {
+  color: #1904E5;
+}
+.customer-navbar .navbar-nav .nav-item .dropdown-menu .nav-item .dropdown-menu .nav-item .dropdown-menu .nav-item .dropdown-menu .nav-item .nav-link {
+  color: #0F1012;
+}
+.customer-navbar .navbar-nav .nav-item .dropdown-menu .nav-item .dropdown-menu .nav-item .dropdown-menu .nav-item .dropdown-menu .nav-item .nav-link.active, .customer-navbar .navbar-nav .nav-item .dropdown-menu .nav-item .dropdown-menu .nav-item .dropdown-menu .nav-item .dropdown-menu .nav-item .nav-link:hover {
+  color: #1904E5;
+}
+.customer-navbar .navbar-nav .nav-item .dropdown-menu .nav-item .dropdown-menu .nav-item .dropdown-menu .nav-item .dropdown-menu .nav-item.active .nav-link {
+  color: #1904E5;
+}
+.customer-navbar .navbar-nav .nav-item .dropdown-menu .nav-item .dropdown-menu .nav-item .dropdown-menu .nav-item.active .nav-link {
+  color: #1904E5;
+}
+.customer-navbar .navbar-nav .nav-item .dropdown-menu .nav-item .dropdown-menu .nav-item.active .nav-link {
+  color: #1904E5;
+}
+.customer-navbar .navbar-nav .nav-item .dropdown-menu .nav-item.active .nav-link {
+  color: #1904E5;
+}
+.customer-navbar .others-option {
+  margin-left: 25px;
+}
+.customer-navbar .others-option .option-item .customer-default-btn {
+  padding: 12px 20px;
+}
+.customer-navbar .others-option .option-item:first-child .customer-default-btn {
   padding: 11px 20px;
 }
 
@@ -16067,10 +16198,13 @@ Marketing Works Area CSS
   align-items: center;
   justify-content: center;
   font-size: 40px;
-  background: linear-gradient(135deg, #6B73FF 0%, #000DFF 100%);
+  background: linear-gradient(135deg, #FAB2FF 0%, #1904E5 100%);
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
+}
+.marketing-works-card .icon.bg-wrap {
+  background-color: #F2F2F3;
 }
 .marketing-works-card h3, .marketing-works-card .h3 {
   font-size: 24px;
@@ -16146,6 +16280,10 @@ Marketing Showcase Area CSS
 /*================================================
 Marketing Collaborate Area CSS
 =================================================*/
+.marketing-collaborate-area .inner {
+  border-bottom: 1px solid #D9D9D9;
+}
+
 .marketing-collaborate-card {
   position: relative;
   padding-left: 25px;
@@ -16208,7 +16346,7 @@ Marketing Benefits Area CSS
   align-items: center;
   justify-content: center;
   font-size: 30px;
-  background: linear-gradient(135deg, #6B73FF 0%, #000DFF 100%);
+  background: linear-gradient(135deg, #FAB2FF 0%, #1904E5 100%);
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -16257,7 +16395,7 @@ Marketing Fun Area CSS
   position: relative;
 }
 .marketing-fun-items .item h3, .marketing-fun-items .item .h3 {
-  background: linear-gradient(135deg, #6B73FF 0%, #000DFF 100%);
+  background: linear-gradient(135deg, #FAB2FF 0%, #1904E5 100%);
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -16335,6 +16473,7 @@ Marketing Pricing Area CSS
   background-color: #ffffff;
   padding: 60px 50px;
   border-radius: 15px;
+  position: relative;
 }
 .marketing-pricing-card .head {
   margin-bottom: 25px;
@@ -16396,6 +16535,57 @@ Marketing Pricing Area CSS
 .marketing-pricing-card .features li:last-child {
   margin-bottom: 0;
 }
+.marketing-pricing-card .tag {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #ffffff;
+  padding: 10px 18px;
+  border-radius: 50px;
+  line-height: 1;
+  position: absolute;
+  right: 25px;
+  top: 25px;
+}
+.marketing-pricing-card .tag span {
+  background: linear-gradient(135deg, #FDD819 0%, #E80505 100%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-size: 15px;
+}
+.marketing-pricing-card.wrap-style2 {
+  background-color: #F2F2F3;
+  position: relative;
+  z-index: 1;
+  overflow: hidden;
+}
+.marketing-pricing-card.wrap-style2::before {
+  position: absolute;
+  content: "";
+  left: 0;
+  right: 0;
+  top: 0;
+  background: linear-gradient(90deg, rgba(105, 200, 255, 0.7) 0%, rgba(151, 71, 255, 0.7) 100%);
+  filter: blur(75.75px);
+  width: 290px;
+  height: 90px;
+  margin: auto;
+  z-index: -1;
+  opacity: 0;
+  visibility: hidden;
+  transition: 0.7s;
+}
+.marketing-pricing-card.wrap-style2:hover::before {
+  opacity: 1;
+  visibility: visible;
+}
+.marketing-pricing-card.wrap-style2:hover .price-btn .marketing-default-btn {
+  background: linear-gradient(135deg, #FDD819 0%, #E80505 100%);
+}
+.marketing-pricing-card.wrap-style2:hover .price-btn .marketing-default-btn::after {
+  background: linear-gradient(135deg, #FDD819 0%, #E80505 100%);
+}
 
 /*================================================
 Marketing Testimonials Area CSS
@@ -16443,7 +16633,7 @@ Marketing Testimonials Area CSS
   border-radius: 15px 0 0 15px;
 }
 .marketing-testimonials-item .content {
-  padding: 30px 25px 30px 0;
+  padding: 30px 25px 30px 10px;
 }
 .marketing-testimonials-item .content .quote {
   margin-bottom: 30px;
@@ -16480,6 +16670,9 @@ Marketing FAQ Area CSS
   border-radius: 7px;
   padding: 25px;
   margin-bottom: 20px;
+}
+.marketing-faq-accordion .accordion .accordion-item.bg-wrap {
+  background-color: #F2F2F3;
 }
 .marketing-faq-accordion .accordion .accordion-item .accordion-button {
   border: none;
@@ -16553,6 +16746,95 @@ Marketing CTA Area CSS
 }
 .marketing-cta-content .cta-btn {
   margin-top: 50px;
+}
+
+/*================================================
+Marketing Page Banner Area CSS
+=================================================*/
+.marketing-page-banner-area {
+  overflow: hidden;
+  padding-top: 100px;
+  padding-bottom: 100px;
+}
+
+.marketing-page-banner-content {
+  max-width: 860px;
+  margin: auto;
+  text-align: center;
+}
+.marketing-page-banner-content .meta {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 5px 17px;
+  background: linear-gradient(#ffffff, #ffffff) padding-box, linear-gradient(60deg, #FAB2FF, #1904E5) border-box;
+  border: 1px solid transparent;
+  border-radius: 50px;
+  margin-bottom: 15px;
+}
+.marketing-page-banner-content .meta li {
+  list-style-type: none;
+  font-size: 14px;
+  position: relative;
+  margin-right: 35px;
+}
+.marketing-page-banner-content .meta li a {
+  color: #808183;
+}
+.marketing-page-banner-content .meta li a:hover {
+  color: #000DFF;
+}
+.marketing-page-banner-content .meta li::before {
+  position: absolute;
+  content: "\ea6e";
+  right: -25px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-family: "remixicon" !important;
+}
+.marketing-page-banner-content .meta li:last-child {
+  margin-right: 0;
+}
+.marketing-page-banner-content .meta li:last-child::before {
+  display: none;
+}
+.marketing-page-banner-content h1, .marketing-page-banner-content .h1 {
+  font-size: 72px;
+  margin-bottom: 15px;
+  font-weight: 600;
+}
+.marketing-page-banner-content p {
+  margin-bottom: 0;
+  max-width: 765px;
+  margin: auto;
+  font-size: 16px;
+}
+
+/*================================================
+Marketing About Area CSS
+=================================================*/
+.marketing-about-image img {
+  border-radius: 15px;
+}
+
+.marketing-about-content {
+  padding-left: 100px;
+  max-width: 630px;
+}
+.marketing-about-content h2, .marketing-about-content .h2 {
+  font-size: 40px;
+  margin-bottom: 70px;
+}
+.marketing-about-content h3, .marketing-about-content .h3 {
+  font-size: 24px;
+  margin-bottom: 15px;
+}
+.marketing-about-content p {
+  margin-bottom: 0;
+}
+.marketing-about-content.wrap-style2 {
+  padding-left: 0;
+  padding-right: 100px;
 }
 
 /*================================================
@@ -16630,6 +16912,9 @@ Marketing Footer Area CSS
   background: linear-gradient(135deg, #FAB2FF 0%, #1904E5 100%);
   border-radius: 50px;
   transition: 0.7s;
+}
+.marketing-footer-widget .list li a:hover {
+  color: #1904E5;
 }
 .marketing-footer-widget .list li:last-child {
   margin-bottom: 0;
@@ -16763,6 +17048,8 @@ Marketing Copyright Area CSS
 }
 
 /* End Marketing & Advertising Demo CSS */
+/* Start Customer Service Demo CSS */
+/* End Customer Service Demo CSS */
 /*================================================
 Pagination CSS
 =================================================*/

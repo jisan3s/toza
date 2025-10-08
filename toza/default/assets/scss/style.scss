@@ -315,6 +315,73 @@ Default Btn Area CSS
         }
     }
 }
+.customer-default-btn {
+    display: inline-flex;
+    gap: 5px;
+    align-items: center;
+    justify-content: center;
+    padding: 18px 28px;
+    background: $customerGradientColor;
+    color: $whiteColor;
+    font-family: $heading-font-family;
+    font-size: $font-fifteen;
+    border-radius: 7px;
+    line-height: 1;
+    overflow: hidden;
+    position: relative;
+    z-index: 1;
+    transition: all 0.35s ease-in-out;
+
+    span {
+        transition: transform 0.35s ease;
+        position: relative;
+        z-index: 2;
+    }
+    i {
+        display: flex;
+        font-size: 13px;
+        position: relative;
+        right: -2px;
+        transition: transform 0.35s ease;
+        z-index: 2;
+    }
+    &::after {
+        position: absolute;
+        content: "";
+        inset: 0;
+        background: $customerGradientColor;
+        opacity: 0;
+        transform: scale(0.9);
+        transition: all 0.35s ease-in-out;
+        z-index: -1;
+    }
+    &:hover {
+        color: $whiteColor;
+        transform: scale(1.05);
+        
+        span {
+            transform: translateX(4px);
+        }
+        i {
+            transform: translateX(3px) rotate(5deg);
+        }
+        &::after {
+            opacity: 1;
+            transform: scale(1);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.25);
+        }
+    }
+    &.border-wrap {
+        background: linear-gradient($whiteColor, $whiteColor) padding-box, linear-gradient(60deg, #FDD819, #E80505) border-box;
+        border: 1px solid transparent;
+        color: $blackColor;
+        padding: 17px 28px;
+
+        &:hover {
+            color: $whiteColor;
+        }
+    }
+}
 
 /*================================================
 Music Section Title CSS
@@ -886,6 +953,109 @@ Navbar Area CSS
             }
             &:first-child {
                 .marketing-default-btn {
+                    padding: 11px 20px;
+                }
+            }
+        }
+    }
+}
+.customer-navbar {
+    padding: 10px 0;
+
+    &.sticky {
+        background-color: $whiteColor;
+    }
+    .navbar-nav {
+        margin: auto;
+
+        .nav-item {
+            .nav-link {
+                color: $blackColor;
+                font-weight: 500;
+
+                &:hover, &.active {
+                    color: $marketingColor;
+                }
+            }
+            &:hover, &.active {
+                color: $marketingColor;
+            }
+            .dropdown-menu {
+                .nav-item {
+                    .nav-link {
+                        color: $blackColor;
+                        font-weight: 400;
+
+                        &.active, &:hover {
+                            color: $marketingColor;
+                        }
+                    }
+                    .dropdown-menu {
+                        .nav-item {
+                            .nav-link {
+                                color: $blackColor;
+
+                                &.active, &:hover {
+                                    color: $marketingColor;
+                                }
+                            }
+                            .dropdown-menu {
+                                .nav-item {
+                                    .nav-link {
+                                        color: $blackColor;
+        
+                                        &.active, &:hover {
+                                            color: $marketingColor;
+                                        }
+                                    }
+                                    .dropdown-menu {
+                                        .nav-item {
+                                            .nav-link {
+                                                color: $blackColor;
+                
+                                                &.active, &:hover {
+                                                    color: $marketingColor;
+                                                }
+                                            }
+                                            &.active {
+                                                .nav-link {
+                                                    color: $marketingColor;
+                                                }
+                                            }
+                                        }
+                                    }
+                                    &.active {
+                                        .nav-link {
+                                            color: $marketingColor;
+                                        }
+                                    }
+                                }
+                            }
+                            &.active {
+                                .nav-link {
+                                    color: $marketingColor;
+                                }
+                            }
+                        }
+                    }
+                    &.active {
+                        .nav-link {
+                            color: $marketingColor;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    .others-option {
+        margin-left: 25px;
+
+        .option-item {
+            .customer-default-btn {
+                padding: 12px 20px;
+            }
+            &:first-child {
+                .customer-default-btn {
                     padding: 11px 20px;
                 }
             }
@@ -3950,10 +4120,13 @@ Marketing Works Area CSS
             align-items: center;
             justify-content: center;
             font-size: 40px;
-            background: $musicGradientColor;
+            background: $marketingGradientColor;
             background-clip: text;
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
+        }
+        &.bg-wrap {
+            background-color: $whiteSmokeColor2;
         }
     }
     h3 {
@@ -4038,6 +4211,11 @@ Marketing Showcase Area CSS
 /*================================================
 Marketing Collaborate Area CSS
 =================================================*/
+.marketing-collaborate-area {
+    .inner {
+        border-bottom: 1px solid #D9D9D9;
+    }
+}
 .marketing-collaborate-card {
     position: relative;
     padding-left: 25px;
@@ -4100,7 +4278,7 @@ Marketing Benefits Area CSS
                 align-items: center;
                 justify-content: center;
                 font-size: 30px;
-                background: $musicGradientColor;
+                background: $marketingGradientColor;
                 background-clip: text;
                 -webkit-background-clip: text;
                 -webkit-text-fill-color: transparent;
@@ -4156,7 +4334,7 @@ Marketing Fun Area CSS
         position: relative;
 
         h3 {
-            background: $musicGradientColor;
+            background: $marketingGradientColor;
             background-clip: text;
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
@@ -4241,7 +4419,8 @@ Marketing Pricing Area CSS
     background-color: $whiteColor;
     padding: 60px 50px;
     border-radius: 15px;
-
+    position: relative;
+    
     .head {
         margin-bottom: 25px;
         
@@ -4307,6 +4486,64 @@ Marketing Pricing Area CSS
             }
         }
     }
+    .tag {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        background-color: $whiteColor;
+        padding: 10px 18px;
+        border-radius: 50px;
+        line-height: 1;
+        position: absolute;
+        right: 25px;
+        top: 25px;
+
+        span {
+            background: $customerGradientColor;
+            background-clip: text;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            font-size: $font-fifteen;
+        }
+    }
+    &.wrap-style2 {
+        background-color: $whiteSmokeColor2;
+        position: relative;
+        z-index: 1;
+        overflow: hidden;
+        
+        &::before {
+            position: absolute;
+            content: "";
+            left: 0;
+            right: 0;
+            top: 0;
+            background: linear-gradient(90deg, rgba(105, 200, 255, 0.70) 0%, rgba(151, 71, 255, 0.70) 100%);
+            filter: blur(75.75px);
+            width: 290px;
+            height: 90px;
+            margin: auto;
+            z-index: -1;
+            opacity: 0;
+            visibility: hidden;
+            transition: $transition;
+        }
+        &:hover {
+            &::before {
+                opacity: 1;
+                visibility: visible;
+            }
+            .price-btn {
+                .marketing-default-btn {
+                    background: $customerGradientColor;
+
+                    &::after {
+                        background: $customerGradientColor;
+                    }
+                }
+            }
+        }
+    }
 }
 
 /*================================================
@@ -4359,7 +4596,7 @@ Marketing Testimonials Area CSS
         }
     }
     .content {
-        padding: 30px 25px 30px 0;
+        padding: 30px 25px 30px 10px;
 
         .quote {
             margin-bottom: 30px;
@@ -4401,6 +4638,9 @@ Marketing FAQ Area CSS
             padding: 25px;
             margin-bottom: 20px;
 
+            &.bg-wrap {
+                background-color: $whiteSmokeColor2;
+            }
             .accordion-button {
                 border: none;
                 box-shadow: unset;
@@ -4482,6 +4722,105 @@ Marketing CTA Area CSS
     }
     .cta-btn {
         margin-top: 50px;
+    }
+}
+
+/*================================================
+Marketing Page Banner Area CSS
+=================================================*/
+.marketing-page-banner-area {
+    overflow: hidden;
+    padding: {
+        top: 100px;
+        bottom: 100px;
+    };
+}
+.marketing-page-banner-content {
+    max-width: 860px;
+    margin: auto;
+    text-align: center;
+
+    .meta {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        padding: 5px 17px;
+        background: linear-gradient($whiteColor, $whiteColor) padding-box, linear-gradient(60deg, #FAB2FF, #1904E5) border-box;
+        border: 1px solid transparent;
+        border-radius: 50px;
+        margin-bottom: 15px;
+
+        li {
+            list-style-type: none;
+            font-size: $font-fourteen;
+            position: relative;
+            margin-right: 35px;
+
+            a {
+                color: $bodyTextColor;
+
+                &:hover {
+                    color: $primary;
+                }
+            }
+            &::before {
+                position: absolute;
+                content: "\ea6e";
+                right: -25px;
+                top: 50%;
+                transform: translateY(-50%);
+                font-family: 'remixicon' !important;
+            }
+            &:last-child {
+                margin-right: 0;
+
+                &::before {
+                    display: none;
+                }
+            }
+        }
+    }
+    h1 {
+        font-size: 72px;
+        margin-bottom: 15px;
+        font-weight: 600;
+    }
+    p {
+        margin-bottom: 0;
+        max-width: 765px;
+        margin: auto;
+        font-size: $font-sixteen;
+    }
+}
+
+/*================================================
+Marketing About Area CSS
+=================================================*/
+.marketing-about-image {
+    img {
+        border-radius: 15px;
+    }
+}
+.marketing-about-content {
+    padding-left: 100px;
+    max-width: 630px;
+
+    h2 {
+        font-size: 40px;
+        margin-bottom: 70px;
+    }
+    h3 {
+        font-size: 24px;
+        margin-bottom: 15px;
+    }
+    p {
+        margin-bottom: 0;
+    }
+    &.wrap-style2 {
+        padding: {
+            left: 0;
+            right: 100px;
+        };
     }
 }
 
@@ -4568,6 +4907,9 @@ Marketing Footer Area CSS
                     background: $marketingGradientColor;
                     border-radius: 50px;
                     transition: $transition;
+                }
+                &:hover {
+                    color: $marketingColor;
                 }
             }
             &:last-child {
@@ -4724,6 +5066,15 @@ Marketing Copyright Area CSS
 
 
 
+
+
+
+
+/* Start Customer Service Demo CSS */
+
+
+
+/* End Customer Service Demo CSS */
 
 
 

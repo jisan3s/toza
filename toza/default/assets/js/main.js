@@ -164,7 +164,7 @@
             },
         }
     });
-
+    
     // Marketing Testimonials Slider JS
 	var SwiperTraveler = new Swiper(".marketing-testimonials-slider", {
         loop: true,
@@ -192,14 +192,15 @@
                 slidesPerView: 2
             },
             1200: {
-                slidesPerView: 3
+                slidesPerView: 2
             },
         }
     });
     
 
 
-
+    
+    
     
     // scrollCue
     scrollCue.init();
