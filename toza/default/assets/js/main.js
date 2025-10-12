@@ -53,28 +53,7 @@
                 });
             }
         } catch {}
-
-        // Background Image simpleParallax
-        const simpleParallax = (elem, modifier) => {
-            let paras = document.getElementsByClassName(elem);
-            for (let i = 0; i < paras.length; i++) {
-                paras[i].setAttribute(
-                    "style",
-                    "background-repeat: no-repeat; background-attachment: fixed; background-size: cover;background-position: center center;"
-                );
-            }
-            const sp = () => {
-                for (let i = 0; i < paras.length; i++) {
-                    let x = paras[i].getBoundingClientRect().top / modifier;
-                    let y = Math.round(x * 100) / 100;
-                    paras[i].style.backgroundPosition = "center " + y + "px";
-                }
-                requestAnimationFrame(sp);
-            };
-            requestAnimationFrame(sp);
-        };
-        simpleParallax("bgImageParallax", 9);
-
+        
     };
 
     // Music Partner Slider JS
@@ -196,11 +175,34 @@
             },
         }
     });
-    
 
-
-    
-    
+    // Customer Partner Slider JS
+	var SwiperTraveler = new Swiper(".customer-partner-slider", {
+        loop: true,
+        spaceBetween: 25,
+        autoHeight: true,
+        autoplay: {
+            delay: 3500,
+            disableOnInteraction: false,
+        },
+        breakpoints: {
+            0: {
+                slidesPerView: 2
+            },
+            576: {
+                slidesPerView: 3
+            },
+            768: {
+                slidesPerView: 4
+            },
+            992: {
+                slidesPerView: 4
+            },
+            1200: {
+                slidesPerView: 5
+            },
+        }
+    });
     
     // scrollCue
     scrollCue.init();
@@ -240,6 +242,29 @@ document.addEventListener("DOMContentLoaded", function () {
 // Marketing Pricing JS
 document.addEventListener("DOMContentLoaded", function () {
     const toggleItems = document.querySelectorAll('.marketing-pricing-toggle-billing li');
+    const priceElements = document.querySelectorAll('.price');
+    toggleItems.forEach(item => {
+        item.addEventListener('click', () => {
+            toggleItems.forEach(el => el.classList.remove('active'));
+            item.classList.add('active');
+            const billingType = item.getAttribute('data-billing');
+            priceElements.forEach(priceEl => {
+                const monthly = priceEl.getAttribute('data-monthly');
+                const yearly = priceEl.getAttribute('data-yearly');
+                if (billingType === 'monthly') {
+                    priceEl.innerHTML = `$${monthly} <span>/month</span>`;
+                } 
+                else {
+                    priceEl.innerHTML = `$${yearly} <span>/year</span>`;
+                }
+            });
+        });
+    });
+});
+
+// Customer Pricing JS
+document.addEventListener("DOMContentLoaded", function () {
+    const toggleItems = document.querySelectorAll('.customer-pricing-toggle-billing li');
     const priceElements = document.querySelectorAll('.price');
     toggleItems.forEach(item => {
         item.addEventListener('click', () => {
